@@ -1,0 +1,99 @@
+scenarios:
+
+  risk_off:
+    name: "Global Risk-Off"
+    description: >
+      Severe global risk-off event characterized by an equity sell-off,
+      falling Treasury yields, widening credit spreads, USD appreciation,
+      and higher gold prices.
+
+    shocks:
+      SPX: -0.20
+      NASDAQ: -0.25
+      EU_EQUITY: -0.22
+
+      USD_5Y_RATE: -0.0075
+      USD_7Y_RATE: -0.0085
+      USD_10Y_RATE: -0.0100
+      USD_20Y_RATE: -0.0100
+
+      IG_SPREAD: 0.0100
+      HY_SPREAD: 0.0250
+
+      EURUSD: -0.08
+      USDJPY: 0.06
+
+      GOLD: 0.10
+
+  stagflation:
+    name: "Stagflation Shock"
+    description: >
+      Inflation remains elevated while economic growth deteriorates,
+      causing equities and bonds to sell off simultaneously and
+      credit spreads to widen.
+
+    shocks:
+      SPX: -0.18
+      NASDAQ: -0.24
+      EU_EQUITY: -0.20
+
+      USD_5Y_RATE: 0.0150
+      USD_7Y_RATE: 0.0140
+      USD_10Y_RATE: 0.0125
+      USD_20Y_RATE: 0.0100
+
+      IG_SPREAD: 0.0075
+      HY_SPREAD: 0.0180
+
+      EURUSD: -0.05
+      USDJPY: 0.04
+
+      GOLD: 0.12
+
+  rates_shock:
+    name: "Rates Higher for Longer"
+    description: >
+      Persistent inflation forces markets to reprice the interest-rate
+      path sharply higher, with the largest impact on long-duration assets.
+
+    shocks:
+      SPX: -0.10
+      NASDAQ: -0.16
+      EU_EQUITY: -0.08
+
+      USD_5Y_RATE: 0.0125
+      USD_7Y_RATE: 0.0150
+      USD_10Y_RATE: 0.0175
+      USD_20Y_RATE: 0.0200
+
+      IG_SPREAD: 0.0030
+      HY_SPREAD: 0.0075
+
+      EURUSD: -0.04
+      USDJPY: 0.05
+
+      GOLD: -0.06
+
+  growth_rally:
+    name: "Growth / Risk-On Rally"
+    description: >
+      Strong economic growth and improving risk sentiment drive equities
+      higher and credit spreads tighter while Treasury yields rise.
+
+    shocks:
+      SPX: 0.15
+      NASDAQ: 0.20
+      EU_EQUITY: 0.12
+
+      USD_5Y_RATE: 0.0075
+      USD_7Y_RATE: 0.0080
+      USD_10Y_RATE: 0.0100
+      USD_20Y_RATE: 0.0125
+
+      IG_SPREAD: -0.0025
+      HY_SPREAD: -0.0075
+
+      EURUSD: 0.05
+      USDJPY: -0.04
+
+      GOLD: -0.05

@@ -11,7 +11,7 @@ positions:
     region: "US"
     exposure_usd: 25000000
     risk_factors:
-      - "SPX"
+      SPX: 1.0
 
   - id: "EQ_US_QQQ"
     instrument: "QQQ"
@@ -19,7 +19,7 @@ positions:
     region: "US"
     exposure_usd: 15000000
     risk_factors:
-      - "NASDAQ"
+      NASDAQ: 1.0
 
   - id: "EQ_EU_VGK"
     instrument: "VGK"
@@ -27,8 +27,8 @@ positions:
     region: "Europe"
     exposure_usd: 10000000
     risk_factors:
-      - "EU_EQUITY"
-      - "EURUSD"
+      EU_EQUITY: 1.0
+      EURUSD: 0.35
 
   - id: "FI_US_IEF"
     instrument: "IEF"
@@ -37,7 +37,7 @@ positions:
     exposure_usd: 15000000
     modified_duration: 7.3
     risk_factors:
-      - "USD_7Y_RATE"
+      USD_7Y_RATE: 1.0
 
   - id: "FI_US_TLT"
     instrument: "TLT"
@@ -46,7 +46,7 @@ positions:
     exposure_usd: 10000000
     modified_duration: 15.8
     risk_factors:
-      - "USD_20Y_RATE"
+      USD_20Y_RATE: 1.0
 
   - id: "CR_US_LQD"
     instrument: "LQD"
@@ -56,8 +56,8 @@ positions:
     modified_duration: 8.1
     spread_duration: 7.6
     risk_factors:
-      - "USD_10Y_RATE"
-      - "IG_SPREAD"
+      USD_10Y_RATE: 1.0
+      IG_SPREAD: 1.0
 
   - id: "CR_US_HYG"
     instrument: "HYG"
@@ -67,8 +67,8 @@ positions:
     modified_duration: 3.5
     spread_duration: 3.3
     risk_factors:
-      - "USD_5Y_RATE"
-      - "HY_SPREAD"
+      USD_5Y_RATE: 1.0
+      HY_SPREAD: 1.0
 
   - id: "CMDTY_GLD"
     instrument: "GLD"
@@ -76,7 +76,7 @@ positions:
     region: "Global"
     exposure_usd: 5000000
     risk_factors:
-      - "GOLD"
+      GOLD: 1.0
 
   - id: "FX_EURUSD"
     instrument: "EURUSD"
@@ -84,7 +84,7 @@ positions:
     region: "Europe"
     exposure_usd: 3000000
     risk_factors:
-      - "EURUSD"
+      EURUSD: 1.0
 
   - id: "FX_USDJPY"
     instrument: "USDJPY"
@@ -92,4 +92,4 @@ positions:
     region: "Japan"
     exposure_usd: 2000000
     risk_factors:
-      - "USDJPY"
+      USDJPY: 1.0
