@@ -1,0 +1,95 @@
+portfolio:
+  name: "Multi-Asset Stress Testing Portfolio"
+  base_currency: "USD"
+  nav: 100000000
+
+positions:
+
+  - id: "EQ_US_SPY"
+    instrument: "SPY"
+    asset_class: "Equity"
+    region: "US"
+    exposure_usd: 25000000
+    risk_factors:
+      - "SPX"
+
+  - id: "EQ_US_QQQ"
+    instrument: "QQQ"
+    asset_class: "Equity"
+    region: "US"
+    exposure_usd: 15000000
+    risk_factors:
+      - "NASDAQ"
+
+  - id: "EQ_EU_VGK"
+    instrument: "VGK"
+    asset_class: "Equity"
+    region: "Europe"
+    exposure_usd: 10000000
+    risk_factors:
+      - "EU_EQUITY"
+      - "EURUSD"
+
+  - id: "FI_US_IEF"
+    instrument: "IEF"
+    asset_class: "Rates"
+    region: "US"
+    exposure_usd: 15000000
+    modified_duration: 7.3
+    risk_factors:
+      - "USD_7Y_RATE"
+
+  - id: "FI_US_TLT"
+    instrument: "TLT"
+    asset_class: "Rates"
+    region: "US"
+    exposure_usd: 10000000
+    modified_duration: 15.8
+    risk_factors:
+      - "USD_20Y_RATE"
+
+  - id: "CR_US_LQD"
+    instrument: "LQD"
+    asset_class: "Credit"
+    region: "US"
+    exposure_usd: 10000000
+    modified_duration: 8.1
+    spread_duration: 7.6
+    risk_factors:
+      - "USD_10Y_RATE"
+      - "IG_SPREAD"
+
+  - id: "CR_US_HYG"
+    instrument: "HYG"
+    asset_class: "Credit"
+    region: "US"
+    exposure_usd: 5000000
+    modified_duration: 3.5
+    spread_duration: 3.3
+    risk_factors:
+      - "USD_5Y_RATE"
+      - "HY_SPREAD"
+
+  - id: "CMDTY_GLD"
+    instrument: "GLD"
+    asset_class: "Commodity"
+    region: "Global"
+    exposure_usd: 5000000
+    risk_factors:
+      - "GOLD"
+
+  - id: "FX_EURUSD"
+    instrument: "EURUSD"
+    asset_class: "FX"
+    region: "Europe"
+    exposure_usd: 3000000
+    risk_factors:
+      - "EURUSD"
+
+  - id: "FX_USDJPY"
+    instrument: "USDJPY"
+    asset_class: "FX"
+    region: "Japan"
+    exposure_usd: 2000000
+    risk_factors:
+      - "USDJPY"
