@@ -151,3 +151,45 @@ def plot_scenario_heatmap(heatmap_data):
     )
 
     return fig
+
+def plot_stress_comparison(comparison):
+    """
+    Compare historical and hypothetical portfolio stress scenarios.
+    """
+    chart_data = comparison.sort_values(
+        "stress_pnl_pct_nav"
+    ).copy()
+
+    fig = px.bar(
+        chart_data,
+        x="stress_pnl_pct_nav",
+        y="scenario_name",
+        orientation="h",
+        color="scenario_type",
+        title="Historical vs Hypothetical Stress Test Results",
+        labels={
+            "stress_pnl_pct_nav": "Stress P&L (% of NAV)",
+            "scenario_name": "Scenario",
+            "scenario_type": "Scenario Type",
+        },
+        text="stress_pnl_pct_nav",
+    )
+
+    fig.update_traces(
+        texttemplate="%{text:.2f}%",
+        textposition="outside",
+    )
+
+    fig.add_vline(
+        x=0,
+        line_width=1,
+        line_dash="dash",
+    )
+
+    fig.update_layout(
+        xaxis_title="Stress P&L (% of NAV)",
+        yaxis_title="",
+        legend_title_text="Scenario Type",
+    )
+
+    return fig
