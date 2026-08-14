@@ -40,3 +40,84 @@ def plot_scenario_comparison(scenario_summary):
     )
 
     return fig
+
+def plot_asset_class_attribution(asset_class_summary, scenario_name):
+    """
+    Plot stress P&L contribution by asset class.
+    """
+    chart_data = asset_class_summary.sort_values(
+        "pnl_pct_nav"
+    ).copy()
+
+    fig = px.bar(
+        chart_data,
+        x="pnl_pct_nav",
+        y="asset_class",
+        orientation="h",
+        title=f"Stress P&L Attribution by Asset Class — {scenario_name}",
+        labels={
+            "pnl_pct_nav": "P&L Contribution (% of NAV)",
+            "asset_class": "Asset Class",
+        },
+        text="pnl_pct_nav",
+    )
+
+    fig.update_traces(
+        texttemplate="%{text:.2f}%",
+        textposition="outside",
+    )
+
+    fig.add_vline(
+        x=0,
+        line_width=1,
+        line_dash="dash",
+    )
+
+    fig.update_layout(
+        xaxis_title="P&L Contribution (% of NAV)",
+        yaxis_title="",
+        showlegend=False,
+    )
+
+    return fig
+
+
+def plot_factor_attribution(factor_summary, scenario_name):
+    """
+    Plot stress P&L contribution by risk factor.
+    """
+    chart_data = factor_summary.sort_values(
+        "pnl_pct_nav"
+    ).copy()
+
+    fig = px.bar(
+        chart_data,
+        x="pnl_pct_nav",
+        y="risk_factor",
+        orientation="h",
+        title=f"Stress P&L Attribution by Risk Factor — {scenario_name}",
+        labels={
+            "pnl_pct_nav": "P&L Contribution (% of NAV)",
+            "risk_factor": "Risk Factor",
+        },
+        text="pnl_pct_nav",
+    )
+
+    fig.update_traces(
+        texttemplate="%{text:.2f}%",
+        textposition="outside",
+    )
+
+    fig.add_vline(
+        x=0,
+        line_width=1,
+        line_dash="dash",
+    )
+
+    fig.update_layout(
+        xaxis_title="P&L Contribution (% of NAV)",
+        yaxis_title="",
+        showlegend=False,
+    )
+
+    return fig
