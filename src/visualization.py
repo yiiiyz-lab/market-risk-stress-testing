@@ -121,3 +121,33 @@ def plot_factor_attribution(factor_summary, scenario_name):
     )
 
     return fig
+
+
+def plot_scenario_heatmap(heatmap_data):
+    """
+    Plot asset-class P&L contribution across stress scenarios.
+    """
+    fig = px.imshow(
+        heatmap_data,
+        text_auto=".2f",
+        aspect="auto",
+        color_continuous_scale="RdYlGn",
+        color_continuous_midpoint=0,
+        title="Stress P&L Heatmap — Scenario × Asset Class",
+        labels={
+            "x": "Scenario",
+            "y": "Asset Class",
+            "color": "P&L (% NAV)",
+        },
+    )
+
+    fig.update_traces(
+        texttemplate="%{z:.2f}%"
+    )
+
+    fig.update_layout(
+        xaxis_title="",
+        yaxis_title="",
+    )
+
+    return fig
