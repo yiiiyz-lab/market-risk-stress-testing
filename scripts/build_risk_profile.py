@@ -15,20 +15,24 @@ from src.risk_profile import (
     build_historical_profile,
     build_hypothetical_profile,
 )
-from src.scenarios import load_scenarios
-from src.stress_engine import run_stress_scenario
+from src.hypothetical_scenarios import (
+    load_hypothetical_scenarios,
+)
+from src.hypothetical_stress import (
+    run_hypothetical_stress,
+)
 
 
 portfolio_info, positions = load_portfolio()
 
-hypothetical_scenarios = load_scenarios()
+hypothetical_scenarios = load_hypothetical_scenarios()
 historical_scenarios = load_historical_scenarios()
 
 scenario_profiles = []
 
 for scenario_id, scenario in hypothetical_scenarios.items():
 
-    position_results, attribution = run_stress_scenario(
+    position_results, attribution = run_hypothetical_stress(
         positions,
         scenario,
     )

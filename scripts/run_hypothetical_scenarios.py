@@ -1,26 +1,32 @@
 import pandas as pd
 
 from src.portfolio import load_portfolio, validate_portfolio
-from src.scenarios import load_scenarios, validate_scenarios
-from src.stress_engine import run_stress_scenario, summarize_stress
+from src.hypothetical_scenarios import (
+    load_hypothetical_scenarios,
+    validate_hypothetical_scenarios,
+)
+from src.hypothetical_stress import (
+    run_hypothetical_stress,
+    summarize_hypothetical_stress,
+)
 
 
 portfolio_info, positions = load_portfolio()
-scenarios = load_scenarios()
+scenarios = load_hypothetical_scenarios()
 
 validate_portfolio(portfolio_info, positions)
-validate_scenarios(scenarios)
+validate_hypothetical_scenarios(scenarios)
 
 scenario_results = []
 
 for scenario_id, scenario in scenarios.items():
 
-    position_results, attribution = run_stress_scenario(
+    position_results, attribution = run_hypothetical_stress(
         positions,
         scenario,
     )
 
-    summary = summarize_stress(
+    summary = summarize_hypothetical_stress(
         position_results,
         portfolio_info["nav"],
     )

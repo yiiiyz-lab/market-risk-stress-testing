@@ -2,8 +2,9 @@ from pathlib import Path
 
 import yaml
 
-
-def load_scenarios(config_path: str = "config/scenarios.yaml"):
+def load_hypothetical_scenarios(
+    config_path="config/hypothetical_scenarios.yaml",
+):
     """
     Load stress scenarios from a YAML configuration file.
     """
@@ -14,8 +15,7 @@ def load_scenarios(config_path: str = "config/scenarios.yaml"):
 
     return config["scenarios"]
 
-
-def validate_scenarios(scenarios):
+def validate_hypothetical_scenarios(scenarios):
     """
     Validate the basic structure of each stress scenario.
     """

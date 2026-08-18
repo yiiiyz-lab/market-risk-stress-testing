@@ -1,9 +1,12 @@
-from src.scenarios import load_scenarios, validate_scenarios
+from src.hypothetical_scenarios import (
+    load_hypothetical_scenarios,
+    validate_hypothetical_scenarios,
+)
 
 
-scenarios = load_scenarios()
+scenarios = load_hypothetical_scenarios()
 
-validate_scenarios(scenarios)
+validate_hypothetical_scenarios(scenarios)
 
 print("\nAvailable Stress Scenarios:")
 
