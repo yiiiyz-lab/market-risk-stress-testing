@@ -1,0 +1,16 @@
+asset_class,historical_stress_pnl,pnl_pct_nav,scenario_id,scenario_name
+Equity,-16242898.938390492,-16.24289893839049,covid_crash,COVID-19 Market Crash
+Credit,-2324604.754155796,-2.324604754155796,covid_crash,COVID-19 Market Crash
+Commodity,-180841.63901457118,-0.18084163901457118,covid_crash,COVID-19 Market Crash
+FX,-18192.496911035305,-0.018192496911035305,covid_crash,COVID-19 Market Crash
+Rates,2379823.385786053,2.379823385786053,covid_crash,COVID-19 Market Crash
+Equity,-14368042.920469265,-14.368042920469264,inflation_selloff_2022,2022 Inflation / Rates Sell-Off
+Rates,-5490480.722184693,-5.490480722184694,inflation_selloff_2022,2022 Inflation / Rates Sell-Off
+Credit,-2906486.1853435,-2.9064861853435002,inflation_selloff_2022,2022 Inflation / Rates Sell-Off
+Commodity,-455949.7991012246,-0.4559497991012245,inflation_selloff_2022,2022 Inflation / Rates Sell-Off
+FX,130588.72484112205,0.13058872484112205,inflation_selloff_2022,2022 Inflation / Rates Sell-Off
+FX,-14158.763684117162,-0.014158763684117164,regional_banking_stress,2023 Regional Banking Stress
+Credit,368910.9812738539,0.3689109812738539,regional_banking_stress,2023 Regional Banking Stress
+Equity,378937.78166049323,0.3789377816604932,regional_banking_stress,2023 Regional Banking Stress
+Commodity,448261.576250899,0.44826157625089896,regional_banking_stress,2023 Regional Banking Stress
+Rates,1269433.6160035403,1.2694336160035404,regional_banking_stress,2023 Regional Banking Stress

@@ -1,0 +1,41 @@
+instrument,asset_class,exposure_usd,stress_pnl,stress_return_pct,pnl_pct_nav,scenario_id,scenario_name
+SPY,Equity,25000000,-5000000.0,-20.0,-5.0,risk_off,Global Risk-Off
+QQQ,Equity,15000000,-3750000.0,-25.0,-3.75,risk_off,Global Risk-Off
+VGK,Equity,10000000,-2480000.0,-24.8,-2.48,risk_off,Global Risk-Off
+IEF,Rates,15000000,930750.0000000001,6.205000000000001,0.9307500000000002,risk_off,Global Risk-Off
+TLT,Rates,10000000,1580000.0,15.8,1.58,risk_off,Global Risk-Off
+LQD,Credit,10000000,50000.0,0.5,0.05,risk_off,Global Risk-Off
+HYG,Credit,5000000,-281250.0,-5.625,-0.28125,risk_off,Global Risk-Off
+GLD,Commodity,5000000,500000.0,10.0,0.5,risk_off,Global Risk-Off
+EURUSD,FX,3000000,-240000.0,-8.0,-0.24,risk_off,Global Risk-Off
+USDJPY,FX,2000000,120000.0,6.0,0.12,risk_off,Global Risk-Off
+SPY,Equity,25000000,-4500000.0,-18.0,-4.5,stagflation,Stagflation Shock
+QQQ,Equity,15000000,-3600000.0,-24.0,-3.5999999999999996,stagflation,Stagflation Shock
+VGK,Equity,10000000,-2175000.0,-21.75,-2.175,stagflation,Stagflation Shock
+IEF,Rates,15000000,-1533000.0,-10.22,-1.533,stagflation,Stagflation Shock
+TLT,Rates,10000000,-1580000.0,-15.8,-1.58,stagflation,Stagflation Shock
+LQD,Credit,10000000,-1582500.0,-15.825,-1.5824999999999998,stagflation,Stagflation Shock
+HYG,Credit,5000000,-559500.0,-11.19,-0.5595,stagflation,Stagflation Shock
+GLD,Commodity,5000000,600000.0,12.0,0.6,stagflation,Stagflation Shock
+EURUSD,FX,3000000,-150000.0,-5.0,-0.15,stagflation,Stagflation Shock
+USDJPY,FX,2000000,80000.0,4.0,0.08,stagflation,Stagflation Shock
+SPY,Equity,25000000,-2500000.0,-10.0,-2.5,rates_shock,Rates Higher for Longer
+QQQ,Equity,15000000,-2400000.0,-16.0,-2.4,rates_shock,Rates Higher for Longer
+VGK,Equity,10000000,-940000.0,-9.4,-0.9400000000000001,rates_shock,Rates Higher for Longer
+IEF,Rates,15000000,-1642500.0,-10.95,-1.6424999999999998,rates_shock,Rates Higher for Longer
+TLT,Rates,10000000,-3160000.0,-31.6,-3.16,rates_shock,Rates Higher for Longer
+LQD,Credit,10000000,-1645500.0000000002,-16.455000000000002,-1.6455000000000002,rates_shock,Rates Higher for Longer
+HYG,Credit,5000000,-342500.0,-6.8500000000000005,-0.3425,rates_shock,Rates Higher for Longer
+GLD,Commodity,5000000,-300000.0,-6.0,-0.3,rates_shock,Rates Higher for Longer
+EURUSD,FX,3000000,-120000.0,-4.0,-0.12,rates_shock,Rates Higher for Longer
+USDJPY,FX,2000000,100000.0,5.0,0.1,rates_shock,Rates Higher for Longer
+SPY,Equity,25000000,3750000.0,15.0,3.75,growth_rally,Growth / Risk-On Rally
+QQQ,Equity,15000000,3000000.0,20.0,3.0,growth_rally,Growth / Risk-On Rally
+VGK,Equity,10000000,1375000.0,13.750000000000002,1.375,growth_rally,Growth / Risk-On Rally
+IEF,Rates,15000000,-876000.0,-5.84,-0.876,growth_rally,Growth / Risk-On Rally
+TLT,Rates,10000000,-1975000.0,-19.75,-1.975,growth_rally,Growth / Risk-On Rally
+LQD,Credit,10000000,-620000.0,-6.2,-0.62,growth_rally,Growth / Risk-On Rally
+HYG,Credit,5000000,-7500.0,-0.15,-0.0075,growth_rally,Growth / Risk-On Rally
+GLD,Commodity,5000000,-250000.0,-5.0,-0.25,growth_rally,Growth / Risk-On Rally
+EURUSD,FX,3000000,150000.0,5.0,0.15,growth_rally,Growth / Risk-On Rally
+USDJPY,FX,2000000,-80000.0,-4.0,-0.08,growth_rally,Growth / Risk-On Rally

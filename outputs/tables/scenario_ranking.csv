@@ -1,0 +1,8 @@
+scenario_id,scenario_name,scenario_type,portfolio_pnl,portfolio_pnl_pct_nav
+inflation_selloff_2022,2022 Inflation / Rates Sell-Off,Historical,-23090372.592077993,-23.090372592077994
+covid_crash,COVID-19 Market Crash,Historical,-16386730.024861852,-16.38673002486185
+stagflation,Stagflation Shock,Hypothetical,-15000000.0,-15.0
+rates_shock,Rates Higher for Longer,Hypothetical,-12950500.0,-12.950500000000002
+risk_off,Global Risk-Off,Hypothetical,-8570500.0,-8.570500000000001
+regional_banking_stress,2023 Regional Banking Stress,Historical,2451393.567690265,2.451393567690265
+growth_rally,Growth / Risk-On Rally,Hypothetical,4466500.0,4.4665

@@ -1,0 +1,4 @@
+scenario_id,scenario_name,start_date,end_date,stress_pnl,stress_pnl_pct_nav,coverage_pct_nav
+inflation_selloff_2022,2022 Inflation / Rates Sell-Off,2022-01-03,2022-10-14,-23090377.817052927,-23.090377817052925,100.0
+covid_crash,COVID-19 Market Crash,2020-02-19,2020-03-23,-16386724.418916464,-16.386724418916465,100.0
+regional_banking_stress,2023 Regional Banking Stress,2023-03-08,2023-03-24,2451396.638653605,2.4513966386536046,100.0

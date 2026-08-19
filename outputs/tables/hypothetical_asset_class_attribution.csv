@@ -1,0 +1,21 @@
+asset_class,stress_pnl,pnl_pct_nav,scenario_id,scenario_name
+Equity,-11230000.0,-11.23,risk_off,Global Risk-Off
+Credit,-231250.0,-0.23124999999999998,risk_off,Global Risk-Off
+FX,-120000.0,-0.12,risk_off,Global Risk-Off
+Commodity,500000.0,0.5,risk_off,Global Risk-Off
+Rates,2510750.0,2.5107500000000003,risk_off,Global Risk-Off
+Equity,-10275000.0,-10.274999999999999,stagflation,Stagflation Shock
+Rates,-3113000.0,-3.113,stagflation,Stagflation Shock
+Credit,-2142000.0,-2.1420000000000003,stagflation,Stagflation Shock
+FX,-70000.0,-0.06999999999999999,stagflation,Stagflation Shock
+Commodity,600000.0,0.6,stagflation,Stagflation Shock
+Equity,-5840000.0,-5.84,rates_shock,Rates Higher for Longer
+Rates,-4802500.0,-4.8025,rates_shock,Rates Higher for Longer
+Credit,-1988000.0000000002,-1.9880000000000002,rates_shock,Rates Higher for Longer
+Commodity,-300000.0,-0.3,rates_shock,Rates Higher for Longer
+FX,-20000.0,-0.02,rates_shock,Rates Higher for Longer
+Rates,-2851000.0,-2.851,growth_rally,Growth / Risk-On Rally
+Credit,-627500.0,-0.6275000000000001,growth_rally,Growth / Risk-On Rally
+Commodity,-250000.0,-0.25,growth_rally,Growth / Risk-On Rally
+FX,70000.0,0.06999999999999999,growth_rally,Growth / Risk-On Rally
+Equity,8125000.0,8.125,growth_rally,Growth / Risk-On Rally

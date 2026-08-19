@@ -1,4 +1,5 @@
 import pandas as pd
+from pathlib import Path
 
 from src.historical_data import (
     calculate_historical_returns,
@@ -27,6 +28,9 @@ portfolio_info, positions = load_portfolio()
 
 hypothetical_scenarios = load_hypothetical_scenarios()
 historical_scenarios = load_historical_scenarios()
+
+output_dir = Path("outputs/tables")
+output_dir.mkdir(parents=True, exist_ok=True)
 
 scenario_profiles = []
 
@@ -92,6 +96,29 @@ executive_summary = build_executive_summary(
 
 cross_scenario = build_cross_scenario_profile(
     scenario_profiles
+)
+
+scenario_ranking = cross_scenario[
+    "scenario_ranking"
+]
+
+asset_class_matrix = cross_scenario[
+    "asset_class_matrix"
+]
+
+scenario_ranking.to_csv(
+    output_dir / "scenario_ranking.csv",
+    index=False,
+)
+
+asset_class_matrix.to_csv(
+    output_dir / "asset_class_scenario_matrix.csv",
+)
+
+print(
+    "\nSaved:"
+    "\n- outputs/tables/scenario_ranking.csv"
+    "\n- outputs/tables/asset_class_scenario_matrix.csv"
 )
 
 print("\nEXECUTIVE SUMMARY")

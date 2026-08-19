@@ -1,0 +1,49 @@
+risk_factor,factor_pnl,pnl_pct_nav,scenario_id,scenario_name
+SPX,-5000000.0,-5.0,risk_off,Global Risk-Off
+NASDAQ,-3750000.0,-3.75,risk_off,Global Risk-Off
+EU_EQUITY,-2200000.0,-2.1999999999999997,risk_off,Global Risk-Off
+IG_SPREAD,-760000.0,-0.76,risk_off,Global Risk-Off
+EURUSD,-520000.0,-0.52,risk_off,Global Risk-Off
+HY_SPREAD,-412500.0,-0.41250000000000003,risk_off,Global Risk-Off
+USDJPY,120000.0,0.12,risk_off,Global Risk-Off
+USD_5Y_RATE,131250.0,0.13125,risk_off,Global Risk-Off
+GOLD,500000.0,0.5,risk_off,Global Risk-Off
+USD_10Y_RATE,810000.0,0.8099999999999999,risk_off,Global Risk-Off
+USD_7Y_RATE,930750.0000000001,0.9307500000000002,risk_off,Global Risk-Off
+USD_20Y_RATE,1580000.0,1.58,risk_off,Global Risk-Off
+SPX,-4500000.0,-4.5,stagflation,Stagflation Shock
+NASDAQ,-3600000.0,-3.5999999999999996,stagflation,Stagflation Shock
+EU_EQUITY,-2000000.0,-2.0,stagflation,Stagflation Shock
+USD_20Y_RATE,-1580000.0,-1.58,stagflation,Stagflation Shock
+USD_7Y_RATE,-1533000.0,-1.533,stagflation,Stagflation Shock
+USD_10Y_RATE,-1012500.0,-1.0125,stagflation,Stagflation Shock
+IG_SPREAD,-570000.0,-0.5700000000000001,stagflation,Stagflation Shock
+EURUSD,-325000.0,-0.325,stagflation,Stagflation Shock
+HY_SPREAD,-297000.0,-0.297,stagflation,Stagflation Shock
+USD_5Y_RATE,-262500.0,-0.2625,stagflation,Stagflation Shock
+USDJPY,80000.0,0.08,stagflation,Stagflation Shock
+GOLD,600000.0,0.6,stagflation,Stagflation Shock
+USD_20Y_RATE,-3160000.0,-3.16,rates_shock,Rates Higher for Longer
+SPX,-2500000.0,-2.5,rates_shock,Rates Higher for Longer
+NASDAQ,-2400000.0,-2.4,rates_shock,Rates Higher for Longer
+USD_7Y_RATE,-1642500.0,-1.6424999999999998,rates_shock,Rates Higher for Longer
+USD_10Y_RATE,-1417500.0000000002,-1.4175000000000002,rates_shock,Rates Higher for Longer
+EU_EQUITY,-800000.0,-0.8,rates_shock,Rates Higher for Longer
+GOLD,-300000.0,-0.3,rates_shock,Rates Higher for Longer
+EURUSD,-260000.0,-0.26,rates_shock,Rates Higher for Longer
+IG_SPREAD,-228000.0,-0.22799999999999998,rates_shock,Rates Higher for Longer
+USD_5Y_RATE,-218750.0,-0.21875000000000003,rates_shock,Rates Higher for Longer
+HY_SPREAD,-123750.0,-0.12375000000000001,rates_shock,Rates Higher for Longer
+USDJPY,100000.0,0.1,rates_shock,Rates Higher for Longer
+USD_20Y_RATE,-1975000.0,-1.975,growth_rally,Growth / Risk-On Rally
+USD_7Y_RATE,-876000.0,-0.876,growth_rally,Growth / Risk-On Rally
+USD_10Y_RATE,-810000.0,-0.8099999999999999,growth_rally,Growth / Risk-On Rally
+GOLD,-250000.0,-0.25,growth_rally,Growth / Risk-On Rally
+USD_5Y_RATE,-131250.0,-0.13125,growth_rally,Growth / Risk-On Rally
+USDJPY,-80000.0,-0.08,growth_rally,Growth / Risk-On Rally
+HY_SPREAD,123750.0,0.12375000000000001,growth_rally,Growth / Risk-On Rally
+IG_SPREAD,190000.0,0.19,growth_rally,Growth / Risk-On Rally
+EURUSD,325000.0,0.325,growth_rally,Growth / Risk-On Rally
+EU_EQUITY,1200000.0,1.2,growth_rally,Growth / Risk-On Rally
+NASDAQ,3000000.0,3.0,growth_rally,Growth / Risk-On Rally
+SPX,3750000.0,3.75,growth_rally,Growth / Risk-On Rally

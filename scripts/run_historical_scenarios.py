@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pandas as pd
 
 from src.historical_data import (
@@ -12,7 +14,14 @@ from src.historical_stress import (
     run_historical_stress,
     summarize_historical_stress,
 )
-from src.portfolio import load_portfolio, validate_portfolio
+from src.portfolio import (
+    load_portfolio,
+    validate_portfolio,
+)
+
+
+output_dir = Path("outputs/tables")
+output_dir.mkdir(parents=True, exist_ok=True)
 
 
 tickers = [
@@ -35,7 +44,9 @@ historical_scenarios = load_historical_scenarios()
 validate_portfolio(portfolio_info, positions)
 validate_historical_scenarios(historical_scenarios)
 
+
 scenario_results = []
+
 
 for scenario_id, scenario in historical_scenarios.items():
 
@@ -45,7 +56,9 @@ for scenario_id, scenario in historical_scenarios.items():
         end_date=scenario["end_date"],
     )
 
-    historical_returns = calculate_historical_returns(prices)
+    historical_returns = calculate_historical_returns(
+        prices
+    )
 
     position_results = run_historical_stress(
         positions,
@@ -70,15 +83,40 @@ for scenario_id, scenario in historical_scenarios.items():
     )
 
 
-historical_summary = pd.DataFrame(scenario_results)
+historical_summary = pd.DataFrame(
+    scenario_results
+)
 
-historical_summary = historical_summary.sort_values(
-    "stress_pnl"
-).reset_index(drop=True)
+historical_summary = (
+    historical_summary.sort_values(
+        "stress_pnl"
+    )
+    .reset_index(drop=True)
+)
+
+
+# ------------------------------------------------------
+# Save raw numeric output
+# ------------------------------------------------------
+
+historical_summary.to_csv(
+    output_dir / "historical_scenario_summary.csv",
+    index=False,
+)
+
+
+# ------------------------------------------------------
+# Terminal display
+# ------------------------------------------------------
+
+display_historical_summary = (
+    historical_summary.copy()
+)
 
 print("\nHistorical Stress Scenario Comparison:")
+
 print(
-    historical_summary.to_string(
+    display_historical_summary.to_string(
         index=False,
         formatters={
             "stress_pnl": lambda x: f"${x:,.0f}",
@@ -86,4 +124,10 @@ print(
             "coverage_pct_nav": lambda x: f"{x:.1f}%",
         },
     )
+)
+
+
+print(
+    "\nSaved:"
+    "\n- outputs/tables/historical_scenario_summary.csv"
 )
