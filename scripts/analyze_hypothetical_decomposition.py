@@ -6,8 +6,15 @@ from src.hypothetical_stress import run_hypothetical_stress
 from src.portfolio import load_portfolio, validate_portfolio
 
 from pathlib import Path
+from src.visualization import (
+    plot_asset_class_attribution,
+    plot_factor_attribution,
+)
 
 import pandas as pd
+
+figure_dir = Path("outputs/figures")
+figure_dir.mkdir(parents=True, exist_ok=True)
 
 portfolio_info, positions = load_portfolio()
 scenarios = load_hypothetical_scenarios()
@@ -59,6 +66,36 @@ for scenario_id, scenario in scenarios.items():
         / portfolio_info["nav"]
         * 100
     )
+
+    if scenario_id == "stagflation":
+
+        asset_class_fig = plot_asset_class_attribution(
+            asset_class_summary,
+            scenario["name"],
+        )
+
+        asset_class_fig.write_image(
+            figure_dir / "stagflation_asset_class_attribution.png",
+            width=1400,
+            height=800,
+            scale=2,
+        )
+
+        asset_class_fig.show()
+
+        factor_fig = plot_factor_attribution(
+            factor_summary,
+            scenario["name"],
+        )
+
+        factor_fig.write_image(
+            figure_dir / "stagflation_risk_factor_attribution.png",
+            width=1400,
+            height=900,
+            scale=2,
+        )
+
+        factor_fig.show()
 
     total_pnl = position_results["stress_pnl"].sum()
 

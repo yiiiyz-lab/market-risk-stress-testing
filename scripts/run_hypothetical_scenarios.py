@@ -1,4 +1,5 @@
 import pandas as pd
+from pathlib import Path
 
 from src.portfolio import load_portfolio, validate_portfolio
 from src.hypothetical_scenarios import (
@@ -10,6 +11,8 @@ from src.hypothetical_stress import (
     summarize_hypothetical_stress,
 )
 
+figure_dir = Path("outputs/figures")
+figure_dir.mkdir(parents=True, exist_ok=True)
 
 portfolio_info, positions = load_portfolio()
 scenarios = load_hypothetical_scenarios()
@@ -54,4 +57,12 @@ print(scenario_summary.to_string(index=False))
 from src.visualization import plot_scenario_comparison
 
 fig = plot_scenario_comparison(scenario_summary)
+
+fig.write_image(
+    figure_dir / "hypothetical_scenario_comparison.png",
+    width=1400,
+    height=800,
+    scale=2,
+)
+
 fig.show()

@@ -1,4 +1,5 @@
 import pandas as pd
+from pathlib import Path
 
 from src.portfolio import load_portfolio, validate_portfolio
 from src.hypothetical_scenarios import (
@@ -23,6 +24,9 @@ from src.historical_stress import (
 )
 
 from src.visualization import plot_stress_comparison
+
+figure_dir = Path("outputs/figures")
+figure_dir.mkdir(parents=True, exist_ok=True)
 
 portfolio_info, positions = load_portfolio()
 
@@ -129,4 +133,12 @@ print(
 )
 
 fig = plot_stress_comparison(comparison)
+
+fig.write_image(
+    figure_dir / "historical_vs_hypothetical.png",
+    width=1500,
+    height=850,
+    scale=2,
+)
+
 fig.show()

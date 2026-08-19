@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+from src.visualization import plot_scenario_heatmap
 
 from src.historical_data import (
     calculate_historical_returns,
@@ -23,6 +24,8 @@ from src.hypothetical_stress import (
     run_hypothetical_stress,
 )
 
+figure_dir = Path("outputs/figures")
+figure_dir.mkdir(parents=True, exist_ok=True)
 
 portfolio_info, positions = load_portfolio()
 
@@ -105,6 +108,19 @@ scenario_ranking = cross_scenario[
 asset_class_matrix = cross_scenario[
     "asset_class_matrix"
 ]
+
+heatmap_fig = plot_scenario_heatmap(
+    asset_class_matrix
+)
+
+heatmap_fig.write_image(
+    figure_dir / "asset_class_scenario_heatmap.png",
+    width=1500,
+    height=850,
+    scale=2,
+)
+
+heatmap_fig.show()
 
 scenario_ranking.to_csv(
     output_dir / "scenario_ranking.csv",
