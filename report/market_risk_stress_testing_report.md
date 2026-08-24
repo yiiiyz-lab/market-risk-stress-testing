@@ -151,7 +151,7 @@ This decomposition is important because the two components need not move in the 
 
 The duration parameters are treated as **static model inputs** for the purpose of the stress analysis. They are not dynamically calculated from the underlying bond cash flows or ETF holdings during each scenario. This approach keeps the stress framework transparent and allows the contribution of interest-rate and spread shocks to be isolated clearly.
 
-The duration-based approach is a first-order approximation. It does not incorporate convexity or other nonlinear effects that may become material under sufficiently large yield or spread movements. These limitations are discussed further in Section 8.
+The duration-based approach is a first-order approximation. It does not incorporate convexity or other nonlinear effects that may become material under sufficiently large yield or spread movements. These limitations are discussed further in Section 7.
 
 In addition to duration, the hypothetical stress framework applies position-specific risk-factor sensitivities when translating scenario shocks into stressed P&L. These sensitivities are specified as model assumptions rather than estimated through statistical calibration. The distinction between scenario shocks, sensitivities, and duration parameters is developed formally in the stress-testing methodology in Section 3.
 
@@ -566,7 +566,7 @@ The -15.00% portfolio loss can be decomposed as:
 
 **Equity (-10.27%) + Rates (-3.11%) + Credit (-2.14%) + FX (-0.07%) + Commodity (+0.60%) = Portfolio (-15.00%)**
 
-Equity is the dominant source of loss, contributing approximately **-$10.28 million, or -10.27% of NAV**. This represents more than two-thirds of the gross negative contribution before diversification offsets and reflects losses across SPY, QQQ, and VGK. Given that Equity represents 50% of portfolio NAV, the result confirms that the portfolio's largest allocation is also its primary source of downside under the scenario.
+Equity is the dominant source of loss, contributing approximately **-$10.28 million, or -10.27% of NAV**. This represents approximately two-thirds of the gross negative contribution before diversification offsets and reflects losses across SPY, QQQ, and VGK. Given that Equity represents 50% of portfolio NAV, the result confirms that the portfolio's largest allocation is also its primary source of downside under the scenario.
 
 Rates generate the second-largest asset-class loss at approximately **-$3.11 million, or -3.11% of NAV**. Both IEF and TLT are negatively affected by the assumed increase in Treasury yields. The contribution is particularly important from a portfolio-risk perspective because the Rates allocation does not provide the defensive offset that it provides under Global Risk-Off. Instead, duration exposure reinforces the Equity drawdown.
 
@@ -872,6 +872,8 @@ A central finding is that **Equity remains the portfolio's largest structural so
 
 The difference is primarily explained by the behavior of the portfolio's Rates allocation. Across the three historical scenarios, Rates contribute:
 
+**Table 15. Historical Rates Contribution Across Scenarios**
+
 | Historical Scenario | Rates P&L as % of NAV | Portfolio Role |
 |---|---:|---|
 | COVID-19 Market Crash | +2.38% | Partial loss mitigation |
@@ -910,23 +912,23 @@ The historical and hypothetical stress frameworks provide complementary perspect
 
 ### 6.1 Historical vs. Hypothetical Scenario Comparison
 
-Across the seven scenarios evaluated in the analysis, portfolio outcomes range from a gain of approximately **2.45% of NAV** during the 2023 Regional Banking Stress to a loss of approximately **23.09% of NAV** during the 2022 Inflation / Rates Sell-Off.
+Across the seven scenarios evaluated in the analysis, portfolio outcomes range from a gain of approximately **4.47% of NAV** under Growth / Risk-On Rally to a loss of approximately **23.09% of NAV** during the 2022 Inflation / Rates Sell-Off.
 
 **Figure 4. Historical vs. Hypothetical Portfolio Stress Results**
 
 ![Historical vs. Hypothetical Portfolio Stress Results](../outputs/figures/historical_vs_hypothetical.png)
 
-**Table 15. Cross-Framework Scenario Comparison**
+**Table 16. Cross-Framework Scenario Comparison**
 
 | Framework | Scenario | Portfolio P&L | P&L as % of NAV |
 |---|---|---:|---:|
 | Historical | 2022 Inflation / Rates Sell-Off | -$23.09 million | -23.09% |
 | Historical | COVID-19 Market Crash | -$16.39 million | -16.39% |
 | Hypothetical | Stagflation Shock | -$15.00 million | -15.00% |
-| Hypothetical | Global Risk-Off | -$11.23 million | -11.23% |
-| Hypothetical | Equity Crash | -$9.35 million | -9.35% |
-| Hypothetical | Rates +100 bps | -$5.25 million | -5.25% |
+| Hypothetical | Rates Higher for Longer | -$12.95 million | -12.95% |
+| Hypothetical | Global Risk-Off | -$8.57 million | -8.57% |
 | Historical | 2023 Regional Banking Stress | +$2.45 million | +2.45% |
+| Hypothetical | Growth / Risk-On Rally | +$4.47 million | +4.47% |
 
 The comparison shows that the two most severe portfolio losses arise from different stress frameworks. The **2022 Inflation / Rates Sell-Off** is the worst overall scenario at **-23.09% of NAV**, while the **Stagflation Shock** is the most severe hypothetical scenario at **-15.00% of NAV**. The COVID-19 Market Crash also produces a larger loss than any hypothetical scenario other than Stagflation.
 
@@ -938,7 +940,7 @@ The asset-class heatmap provides a complementary view by showing how the composi
 
 ![Cross-Scenario Asset-Class P&L Heatmap](../outputs/figures/asset_class_scenario_heatmap.png)
 
-The heatmap highlights the importance of cross-asset interaction. Equity is the dominant source of downside in the major loss scenarios, but the behavior of Rates changes substantially across stress regimes. During the COVID-19 Market Crash and Global Risk-Off, positive Rates contributions partially offset Equity losses. During the 2022 Inflation / Rates Sell-Off, Stagflation Shock, and Rates +100 bps scenario, Rates instead contribute negatively and reinforce losses elsewhere in the portfolio.
+The heatmap highlights the importance of cross-asset interaction. Equity is the dominant source of downside in the major loss scenarios, but the behavior of Rates changes substantially across stress regimes. During the COVID-19 Market Crash and Global Risk-Off, positive Rates contributions partially offset Equity losses. During the 2022 Inflation / Rates Sell-Off, Stagflation Shock, and Rates Higher for Longer scenario, Rates instead contribute negatively and reinforce losses elsewhere in the portfolio.
 
 The same comparison also shows why total portfolio severity cannot be inferred from Equity performance alone. Equity contributes **-16.24% of NAV** during COVID-19 compared with **-14.37%** during the 2022 sell-off, yet the total portfolio loss is substantially larger in 2022 because Rates, Credit, and Commodity also contribute negatively. Similarly, the hypothetical Stagflation Shock combines Equity, Rates, and Credit losses, making it more severe than scenarios in which adverse movements are concentrated in fewer risk channels.
 
