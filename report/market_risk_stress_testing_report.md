@@ -277,19 +277,23 @@ $$
 \mathrm{PnL}_{\mathrm{portfolio}} = \sum_i \mathrm{PnL}_i
 $$
 
-To make scenario severity directly comparable across scenarios and asset classes, portfolio P&L is also expressed relative to portfolio NAV:
+To make scenario severity directly comparable across scenarios and asset classes, portfolio P&L is also expressed as a percentage of portfolio NAV:
 
 $$
-\mathrm{PnL}_{\%\mathrm{NAV}} =
+\mathrm{PnL}_{\mathrm{NAV}} =
 \frac{\mathrm{PnL}_{\mathrm{portfolio}}}{\mathrm{NAV}}
 \times 100
 $$
 
+where $\mathrm{PnL}_{\mathrm{NAV}}$ denotes stressed portfolio P&L expressed as a percentage of NAV.
+
 With a portfolio NAV of $100 million, a stress loss of $15 million therefore corresponds to:
 
 $$
-\frac{-15{,}000{,}000}{100{,}000{,}000} \times 100 = -15.0\%
+\frac{-15{,}000{,}000}{100{,}000{,}000} \times 100 = -15.0
 $$
+
+Therefore, the portfolio stress loss is **-15.0% of NAV**.
 
 The same normalization is applied to position-level, asset-class, and risk-factor contributions when they are reported as percentages of NAV.
 
@@ -301,19 +305,11 @@ Because hypothetical stress is calculated initially at the risk-factor level, th
 
 Risk-factor attribution identifies the modeled economic shocks responsible for the result. Position attribution identifies the individual instruments through which those shocks affect the portfolio, while asset-class attribution aggregates the same P&L into broader portfolio risk categories.
 
-This decomposition is additive. Subject to rounding:
+This decomposition is additive. Subject to rounding, the same total portfolio P&L is recovered whether the result is aggregated by risk factor, position, or asset class:
 
-$$
-\sum_f \mathrm{PnL}_f
-=
-\sum_i \mathrm{PnL}_i
-=
-\sum_a \mathrm{PnL}_a
-=
-\mathrm{PnL}_{\mathrm{portfolio}}
-$$
+**Sum of Risk-Factor P&L = Sum of Position P&L = Sum of Asset-Class P&L = Portfolio P&L**
 
-where $a$ denotes asset class.
+In other words, the different attribution views represent alternative decompositions of the same portfolio-level stress result rather than separate sources of P&L.
 
 The hypothetical scenario shocks and factor sensitivities used in this framework are deterministic model inputs. The primary risk-factor sensitivities are generally set to 1.0, with VGK additionally assigned a 0.35 sensitivity to EURUSD. These sensitivities are not statistically calibrated to historical factor relationships or estimated betas. Consequently, the hypothetical stress results should be interpreted as conditional scenario estimates under the specified assumptions rather than as forecasts or probabilistic loss estimates.
 
@@ -342,18 +338,14 @@ The historical framework therefore represents a replay analysis:
 For instrument $i$, the historical return over scenario window $h$ is calculated from its observed market prices:
 
 $$
-R_{i,h}
-=
-\frac{P_{i,h}^{\mathrm{end}}}
-{P_{i,h}^{\mathrm{start}}}
-- 1
+R_{i,h} = \frac{P_{i,h}^{end}}{P_{i,h}^{start}} - 1
 $$
 
 where:
 
 - $R_{i,h}$ is the historical return of instrument $i$ during scenario $h$;
-- $P_{i,h}^{\mathrm{start}}$ is the instrument price at the beginning of the historical window;
-- $P_{i,h}^{\mathrm{end}}$ is the instrument price at the end of the historical window.
+- $P_{i,h}^{start}$ is the instrument price at the beginning of the historical window;
+- $P_{i,h}^{end}$ is the instrument price at the end of the historical window.
 
 The observed historical return is then applied directly to the current USD exposure of the position:
 
@@ -378,27 +370,24 @@ The calculation therefore answers a counterfactual question: how would the portf
 Historical position-level P&L is aggregated to obtain total portfolio stress P&L:
 
 $$
-\mathrm{PnL}_{\mathrm{portfolio},h}
-=
-\sum_i \mathrm{PnL}_{i,h}
+\mathrm{PnL}_{portfolio,h} = \sum_i \mathrm{PnL}_{i,h}
 $$
 
 As in the hypothetical framework, the portfolio result is normalized by current portfolio NAV:
 
 $$
-\mathrm{PnL}_{\%\mathrm{NAV},h}
+\mathrm{PnL}_{NAV,h}
 =
-\frac{\mathrm{PnL}_{\mathrm{portfolio},h}}
-{\mathrm{NAV}}
+\frac{\mathrm{PnL}_{portfolio,h}}{\mathrm{NAV}}
 \times 100
 $$
+
+where $\mathrm{PnL}_{NAV,h}$ denotes historical portfolio P&L expressed as a percentage of NAV for scenario $h$.
 
 Position-level results can also be aggregated by asset class:
 
 $$
-\mathrm{PnL}_{a,h}
-=
-\sum_{i \in a} \mathrm{PnL}_{i,h}
+\mathrm{PnL}_{a,h} = \sum_{i \in a} \mathrm{PnL}_{i,h}
 $$
 
 where $a$ denotes an asset class.
