@@ -2,6 +2,18 @@
 
 ## Portfolio-Level Stress Testing, P&L Attribution, and Cross-Scenario Risk Profiling
 
+## Executive Summary
+
+This report evaluates the stress resilience of a hypothetical **$100 million multi-asset portfolio** using complementary historical and hypothetical stress-testing frameworks. The portfolio contains exposures across Equity, Rates, Credit, FX, and Commodity asset classes. Historical stress testing replays realized instrument returns from selected periods of market disruption, while hypothetical stress testing applies predefined shocks to modeled risk factors and translates those shocks into position- and portfolio-level P&L.
+
+The analysis evaluates **seven stress scenarios**: three historical episodes and four hypothetical scenarios. Portfolio outcomes range from a gain of **4.47% of NAV** under Growth / Risk-On Rally to a loss of **23.09% of NAV** during the 2022 Inflation / Rates Sell-Off. Among the hypothetical scenarios, **Stagflation Shock** produces the largest loss at **15.00% of NAV**, followed by Rates Higher for Longer at **12.95% of NAV**. The COVID-19 Market Crash generates a historical loss of **16.39% of NAV**, while the 2023 Regional Banking Stress produces a gain of **2.45% of NAV**.
+
+The results identify **Equity concentration as the portfolio's largest structural source of downside**, reflecting its 50% allocation to the asset class. However, Equity weakness alone does not determine overall portfolio stress severity. The most damaging outcomes occur when losses extend across multiple major exposures. During the 2022 Inflation / Rates Sell-Off and the hypothetical Stagflation Shock, Equity losses coincide with adverse fixed-income performance, causing exposures that might otherwise provide diversification to reinforce portfolio losses.
+
+A key finding is therefore that **the diversification benefit of Rates is strongly regime-dependent**. Treasury exposure provides meaningful loss mitigation when falling yields accompany risk-asset weakness, as observed during the COVID-19 Market Crash and modeled under Global Risk-Off. In inflationary or rising-rate environments, however, the same duration exposure becomes a source of loss. Credit can further amplify these outcomes through the combined effects of underlying rate movements and changes in credit spreads, while gold provides a smaller partial offset in selected scenarios.
+
+Taken together, the historical and hypothetical frameworks show that the portfolio is most vulnerable not simply to large individual market shocks, but to **adverse alignment across its underlying economic risk drivers**. The central risk-management implication is that diversification should be evaluated not only by the number of instruments or asset classes held, but also by how those exposures are expected to interact across different market regimes.
+
 ---
 
 ## 2. Portfolio Composition and Risk Exposure
