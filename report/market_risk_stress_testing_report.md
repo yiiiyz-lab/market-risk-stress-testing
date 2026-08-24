@@ -1,7 +1,5 @@
 # Market Risk Stress Testing
 
-## Portfolio-Level Stress Testing, P&L Attribution, and Cross-Scenario Risk Profiling
-
 ## Executive Summary
 
 This report evaluates the stress resilience of a hypothetical **$100 million multi-asset portfolio** using complementary historical and hypothetical stress-testing frameworks. The portfolio contains exposures across Equity, Rates, Credit, FX, and Commodity asset classes. Historical stress testing replays realized instrument returns from selected periods of market disruption, while hypothetical stress testing applies predefined shocks to modeled risk factors and translates those shocks into position- and portfolio-level P&L.
@@ -16,9 +14,9 @@ Taken together, the historical and hypothetical frameworks show that the portfol
 
 ---
 
-## 2. Portfolio Composition and Risk Exposure
+## 1. Portfolio Composition and Risk Exposure
 
-### 2.1 Portfolio Overview
+### 1.1 Portfolio Overview
 
 The stress-testing framework is applied to a hypothetical multi-asset portfolio with a total net asset value (NAV) of **$100 million**. The portfolio contains ten positions spanning five broad asset classes: Equity, Rates, Credit, Commodity, and Foreign Exchange (FX). The portfolio is designed to provide exposure to several major market risk channels, including equity-market movements, interest-rate changes, credit-spread movements, commodity prices, and foreign-exchange rates.
 
@@ -42,7 +40,7 @@ The portfolio contains $50 million of equity exposure through U.S. and European 
 
 The portfolio is intentionally multi-asset, but its exposure is not evenly distributed across risk categories. Equity represents the largest allocation at 50% of NAV, followed by Rates at 25%, Credit at 15%, Commodity at 5%, and FX at 5%. This composition provides the foundation for the stress-testing analysis: portfolio outcomes will depend not only on the magnitude of shocks to individual markets, but also on how losses and gains across these asset classes interact under different market regimes.
 
-### 2.2 Asset-Class Allocation
+### 1.2 Asset-Class Allocation
 
 At the asset-class level, the portfolio is concentrated primarily in Equity and Rates, which together account for **75% of NAV**. Credit represents an additional 15%, while Commodity and FX exposures each represent 5%. The resulting allocation is:
 
@@ -60,7 +58,7 @@ This allocation creates an important distinction between **portfolio weight** an
 
 The portfolio should therefore be viewed not simply as a set of asset-class weights, but as a collection of exposures to different underlying market risk factors. The mapping between individual positions and those risk factors is presented in the following subsection.
 
-### 2.3 Risk-Factor Mapping
+### 1.3 Risk-Factor Mapping
 
 The hypothetical stress-testing framework translates each portfolio position into one or more underlying market risk factors. This mapping allows scenario shocks to be specified at the risk-factor level and subsequently translated into position-level and portfolio-level stressed P&L.
 
@@ -99,7 +97,7 @@ The mapping can be summarized as:
 
 This risk-factor mapping is specific to the hypothetical stress-testing framework. Historical stress testing does not require the same factor mapping because it applies observed historical returns directly to each portfolio instrument.
 
-### 2.4 Fixed-Income Sensitivity Assumptions
+### 1.4 Fixed-Income Sensitivity Assumptions
 
 Fixed-income positions require additional sensitivity parameters because their stressed returns cannot be represented adequately by applying interest-rate or credit-spread shocks as direct percentage price changes. The hypothetical stress framework therefore uses **modified duration** for interest-rate risk and **spread duration** for credit-spread risk.
 
@@ -163,13 +161,13 @@ This decomposition is important because the two components need not move in the 
 
 The duration parameters are treated as **static model inputs** for the purpose of the stress analysis. They are not dynamically calculated from the underlying bond cash flows or ETF holdings during each scenario. This approach keeps the stress framework transparent and allows the contribution of interest-rate and spread shocks to be isolated clearly.
 
-The duration-based approach is a first-order approximation. It does not incorporate convexity or other nonlinear effects that may become material under sufficiently large yield or spread movements. These limitations are discussed further in Section 7.
+The duration-based approach is a first-order approximation. It does not incorporate convexity or other nonlinear effects that may become material under sufficiently large yield or spread movements. These limitations are discussed further in Section 6.
 
-In addition to duration, the hypothetical stress framework applies position-specific risk-factor sensitivities when translating scenario shocks into stressed P&L. These sensitivities are specified as model assumptions rather than estimated through statistical calibration. The distinction between scenario shocks, sensitivities, and duration parameters is developed formally in the stress-testing methodology in Section 3.
+In addition to duration, the hypothetical stress framework applies position-specific risk-factor sensitivities when translating scenario shocks into stressed P&L. These sensitivities are specified as model assumptions rather than estimated through statistical calibration. The distinction between scenario shocks, sensitivities, and duration parameters is developed formally in the stress-testing methodology in Section 2.
 
-## 3. Stress Testing Methodology
+## 2. Stress Testing Methodology
 
-### 3.1 Stress Testing Framework
+### 2.1 Stress Testing Framework
 
 The stress-testing framework evaluates the portfolio under two complementary approaches: **hypothetical stress testing** and **historical stress testing**. Both approaches estimate the impact of adverse market conditions on the portfolio's current exposures, but they differ in how the stressed market movements are defined and transmitted to individual positions.
 
@@ -191,7 +189,7 @@ Neither approach should be interpreted as a forecast of future portfolio perform
 
 Using both approaches reduces reliance on a single view of stress. Hypothetical scenarios can examine economically relevant conditions that may not correspond exactly to a past episode, while historical scenarios provide an empirical reference based on realized market behavior. Their combined use therefore provides a broader basis for assessing portfolio vulnerabilities, loss concentration, and diversification behavior across different market regimes.
 
-### 3.2 Hypothetical Stress Methodology
+### 2.2 Hypothetical Stress Methodology
 
 The hypothetical stress-testing framework estimates portfolio P&L by applying predefined scenario shocks to the risk factors mapped to each position. For position $i$ and risk factor $f$, the stressed P&L contribution depends on four components: the position exposure, the scenario shock, the assigned factor sensitivity, and, for fixed-income exposures, the relevant duration measure.
 
@@ -211,7 +209,7 @@ $$
 100 \text{ bps} = 0.01
 $$
 
-#### 3.2.1 Direct-Return Risk Factors
+#### 2.2.1 Direct-Return Risk Factors
 
 For direct-return factors, stressed P&L is calculated by applying the specified percentage shock to the position exposure, adjusted by the assigned factor sensitivity:
 
@@ -231,7 +229,7 @@ The resulting stress loss is **$5.0 million**.
 
 The same framework accommodates partial factor sensitivity. VGK, for example, has a primary sensitivity of 1.0 to `EU_EQUITY` and an additional sensitivity of 0.35 to `EURUSD`. Its total hypothetical P&L is therefore the sum of the contributions generated by both factors.
 
-#### 3.2.2 Interest-Rate Risk Factors
+#### 2.2.2 Interest-Rate Risk Factors
 
 For interest-rate exposures, the framework uses a first-order modified-duration approximation. The factor-level P&L is estimated as:
 
@@ -251,7 +249,7 @@ The resulting estimated stress loss is **$1.58 million**.
 
 The same methodology is applied to IEF and to the interest-rate components of LQD and HYG using their respective rate factors and modified-duration assumptions.
 
-#### 3.2.3 Credit-Spread Risk Factors
+#### 2.2.3 Credit-Spread Risk Factors
 
 Credit instruments are additionally exposed to changes in corporate credit spreads. The spread component of stressed P&L is estimated using spread duration:
 
@@ -269,7 +267,7 @@ $$
 
 This allows the framework to distinguish between losses caused by movements in the underlying Treasury curve and losses caused by changes in credit risk premia.
 
-#### 3.2.4 Position and Portfolio Aggregation
+#### 2.2.4 Position and Portfolio Aggregation
 
 A position may be exposed to one or more modeled risk factors. Its total stressed P&L is calculated by summing all factor-level contributions:
 
@@ -309,7 +307,7 @@ Therefore, the portfolio stress loss is **-15.0% of NAV**.
 
 The same normalization is applied to position-level, asset-class, and risk-factor contributions when they are reported as percentages of NAV.
 
-#### 3.2.5 Hypothetical P&L Attribution
+#### 2.2.5 Hypothetical P&L Attribution
 
 Because hypothetical stress is calculated initially at the risk-factor level, the resulting portfolio loss can be decomposed through several analytical layers:
 
@@ -325,13 +323,13 @@ In other words, the different attribution views represent alternative decomposit
 
 The hypothetical scenario shocks and factor sensitivities used in this framework are deterministic model inputs. The primary risk-factor sensitivities are generally set to 1.0, with VGK additionally assigned a 0.35 sensitivity to EURUSD. These sensitivities are not statistically calibrated to historical factor relationships or estimated betas. Consequently, the hypothetical stress results should be interpreted as conditional scenario estimates under the specified assumptions rather than as forecasts or probabilistic loss estimates.
 
-### 3.3 Historical Stress Methodology
+### 2.3 Historical Stress Methodology
 
 Historical stress testing evaluates how the current portfolio would have performed under market movements observed during selected historical periods of stress. Unlike the hypothetical framework, historical stress does not construct shocks at the risk-factor level. Instead, it measures the realized return of each portfolio instrument over a predefined historical window and applies that return directly to the instrument's current exposure.
 
 This approach preserves the cross-asset market movements that occurred during the selected episode and provides an empirical complement to the assumption-driven hypothetical scenarios.
 
-#### 3.3.1 Historical Scenario Definition
+#### 2.3.1 Historical Scenario Definition
 
 Each historical scenario is defined by a start date and an end date corresponding to a selected period of market stress. The framework evaluates three historical episodes:
 
@@ -345,7 +343,7 @@ The historical framework therefore represents a replay analysis:
 
 **Historical Stress Window → Observed Instrument Returns → Current Portfolio Exposures → Stress P&L**
 
-#### 3.3.2 Historical Return and P&L Calculation
+#### 2.3.2 Historical Return and P&L Calculation
 
 For instrument $i$, the historical return over scenario window $h$ is calculated from its observed market prices:
 
@@ -377,7 +375,7 @@ The resulting historical stress loss is **$7.5 million**.
 
 The calculation therefore answers a counterfactual question: how would the portfolio's current exposures perform if the instrument-level market movements observed during the historical episode were repeated?
 
-#### 3.3.3 Portfolio Aggregation and Attribution
+#### 2.3.3 Portfolio Aggregation and Attribution
 
 Historical position-level P&L is aggregated to obtain total portfolio stress P&L:
 
@@ -407,7 +405,7 @@ The resulting decomposition therefore follows:
 
 Historical stress attribution is reported at the position and asset-class levels. Risk-factor attribution is not applied to historical scenarios because the framework directly uses realized instrument returns rather than decomposing those returns into modeled factor shocks. This distinction preserves the methodological separation between the historical and hypothetical approaches.
 
-#### 3.3.4 Interpretation of Historical Stress
+#### 2.3.4 Interpretation of Historical Stress
 
 Historical stress results should be interpreted as conditional replay estimates rather than forecasts. They show the estimated effect on the current portfolio if the selected historical pattern of instrument returns were repeated, holding current portfolio exposures constant.
 
@@ -417,13 +415,13 @@ Historical replay nevertheless depends on the selected scenario window. Differen
 
 Used together, the historical and hypothetical methodologies provide complementary information: historical stress anchors the analysis in realized market behavior, while hypothetical stress allows specific economic shocks and risk-factor relationships to be examined explicitly.
 
-### 3.4 Scenario Design and Selection
+### 2.4 Scenario Design and Selection
 
 The stress-testing framework contains seven scenarios: four hypothetical scenarios and three historical scenarios. The scenario set is designed to expose the portfolio to materially different sources of market risk rather than variations of a single adverse environment. Together, the scenarios examine equity drawdowns, interest-rate shocks, credit-spread widening, inflationary pressure, safe-haven behavior, and changes in cross-asset diversification.
 
 The scenarios are not assigned probabilities. Their purpose is to evaluate the conditional behavior of the current portfolio under a range of economically distinct market environments.
 
-#### 3.4.1 Hypothetical Scenario Design
+#### 2.4.1 Hypothetical Scenario Design
 
 Four hypothetical scenarios are used in the analysis:
 
@@ -436,7 +434,7 @@ Four hypothetical scenarios are used in the analysis:
 | Rates Higher for Longer | Persistent upward pressure on interest rates | Treasury yield increases, duration losses, credit repricing, pressure on rate-sensitive equities | Tests sensitivity to sustained restrictive monetary conditions |
 | Growth / Risk-On Rally | Improving growth and investor risk appetite | Equity gains, higher yields, credit-spread tightening, weaker defensive assets | Tests upside participation and the behavior of defensive positions in a favorable risk environment |
 
-The hypothetical scenarios are designed at the risk-factor level. Each scenario specifies shocks to the factors relevant to the portfolio, including equity indices, Treasury rates, credit spreads, foreign-exchange rates, and gold. These shocks are then transmitted to positions using the methodology described in Section 3.2.
+The hypothetical scenarios are designed at the risk-factor level. Each scenario specifies shocks to the factors relevant to the portfolio, including equity indices, Treasury rates, credit spreads, foreign-exchange rates, and gold. These shocks are then transmitted to positions using the methodology described in Section 2.2.
 
 The scenarios are intentionally differentiated in their economic structure. Global Risk-Off represents a more conventional defensive market regime in which risky assets decline while high-quality duration and gold can provide offsets. Stagflation Shock is designed to challenge this diversification mechanism by combining equity weakness with rising rates and wider credit spreads. Rates Higher for Longer isolates the portfolio's vulnerability to sustained interest-rate pressure, while Growth / Risk-On Rally provides a positive scenario that tests whether the portfolio participates in improving risk sentiment and identifies which defensive exposures become performance drags.
 
@@ -444,7 +442,7 @@ Including a positive scenario is useful because stress analysis need not be rest
 
 The hypothetical shock magnitudes are deterministic scenario assumptions rather than forecasts or statistically estimated tail events. They are selected to create economically interpretable stress environments and should therefore be evaluated as conditional model inputs.
 
-#### 3.4.2 Historical Scenario Selection
+#### 2.4.2 Historical Scenario Selection
 
 Three historical episodes are used to complement the hypothetical scenarios:
 
@@ -458,9 +456,9 @@ Three historical episodes are used to complement the hypothetical scenarios:
 
 These episodes were selected because they represent distinct forms of realized market stress. The COVID-19 episode captures a rapid and severe risk-off shock. The 2022 episode captures an inflation-driven regime in which equities and fixed income experienced substantial simultaneous losses. The 2023 regional banking episode provides a different stress structure in which declines in interest rates and gains in defensive assets could offset weakness elsewhere in the portfolio.
 
-The selected windows are applied consistently across the instruments in each historical scenario. Historical returns are measured over each specified window and then applied to the portfolio's current exposures using the methodology described in Section 3.3.
+The selected windows are applied consistently across the instruments in each historical scenario. Historical returns are measured over each specified window and then applied to the portfolio's current exposures using the methodology described in Section 2.3.
 
-#### 3.4.3 Complementarity of the Scenario Set
+#### 2.4.3 Complementarity of the Scenario Set
 
 The seven scenarios are designed to provide complementary rather than redundant information. In particular, the scenario set allows the portfolio to be examined under several different relationships between equity and interest-rate risk.
 
@@ -484,9 +482,9 @@ This distinction is particularly relevant because Equity and Rates represent the
 
 The historical and hypothetical scenarios provide complementary tests of these relationships under both realized market conditions and explicitly defined factor shocks.
 
-## 4. Hypothetical Stress Testing Results
+## 3. Hypothetical Stress Testing Results
 
-### 4.1 Portfolio-Level Scenario Results
+### 3.1 Portfolio-Level Scenario Results
 
 The four hypothetical scenarios produce materially different portfolio outcomes, reflecting differences in the direction and combination of equity, interest-rate, credit-spread, commodity, and foreign-exchange shocks. Of the four scenarios, Stagflation Shock generates the largest portfolio loss, followed by Rates Higher for Longer and Global Risk-Off. Growth / Risk-On Rally produces a positive portfolio result.
 
@@ -513,7 +511,7 @@ The **Growth / Risk-On Rally** scenario generates a gain of approximately $4.5 m
 
 Taken together, the scenario results show that portfolio outcomes depend not only on the severity of individual market shocks, but also on whether major asset classes reinforce or offset one another. The contrast between Stagflation Shock and Global Risk-Off is particularly important: both contain substantial equity weakness, but their portfolio losses differ because the Rates allocation behaves in opposite directions. This cross-asset interaction is examined more directly through asset-class attribution in the following subsection.
 
-### 4.2 Cross-Scenario Asset-Class Attribution
+### 3.2 Cross-Scenario Asset-Class Attribution
 
 Portfolio-level stress results can be decomposed by asset class to identify which exposures drive losses and which provide diversification benefits under each hypothetical scenario. Table 7 presents each asset class's contribution to portfolio P&L as a percentage of NAV.
 
@@ -564,7 +562,7 @@ Overall, the asset-class attribution demonstrates that the severity of a hypothe
 
 This simultaneous deterioration across major asset classes explains why Stagflation Shock is the most severe hypothetical scenario and motivates a more detailed decomposition of its $15.0 million portfolio loss in the following subsections.
 
-### 4.3 Stagflation Shock: Asset-Class Decomposition
+### 3.3 Stagflation Shock: Asset-Class Decomposition
 
 Stagflation Shock produces the most severe result among the four hypothetical scenarios, generating a portfolio loss of **$15.0 million, or 15.00% of NAV**. Unlike a conventional risk-off scenario in which falling interest rates may offset weakness in risky assets, the Stagflation Shock generates simultaneous losses across the portfolio's three largest asset classes: Equity, Rates, and Credit.
 
@@ -596,7 +594,7 @@ This structure is particularly damaging because the portfolio's principal defens
 
 Asset-class attribution identifies where the portfolio loss is concentrated, but it does not fully explain which modeled market shocks generate those losses. The next subsection therefore decomposes the same Stagflation result at the underlying risk-factor level.
 
-### 4.4 Stagflation Shock: Risk-Factor Decomposition
+### 3.4 Stagflation Shock: Risk-Factor Decomposition
 
 Asset-class attribution identifies the broad portfolio exposures responsible for the Stagflation loss, while risk-factor attribution provides a more granular explanation of the underlying modeled shocks. Because hypothetical stress P&L is calculated initially at the risk-factor level, each position's loss can be decomposed into the individual factors that generate it.
 
@@ -604,7 +602,7 @@ Asset-class attribution identifies the broad portfolio exposures responsible for
 
 ![Stagflation Shock Risk-Factor Attribution](../outputs/figures/stagflation_risk_factor_attribution.png)
 
-The largest individual risk-factor loss is generated by `SPX`, which contributes **-$4.50 million, or -4.50% of NAV**. `NASDAQ` is the second-largest contributor at **-$3.60 million, or -3.60% of NAV**, followed by `EU_EQUITY` at **-$2.00 million, or -2.00% of NAV**. Together, these three equity factors account for the majority of the scenario's negative P&L and explain the dominant Equity contribution identified in Section 4.3.
+The largest individual risk-factor loss is generated by `SPX`, which contributes **-$4.50 million, or -4.50% of NAV**. `NASDAQ` is the second-largest contributor at **-$3.60 million, or -3.60% of NAV**, followed by `EU_EQUITY` at **-$2.00 million, or -2.00% of NAV**. Together, these three equity factors account for the majority of the scenario's negative P&L and explain the dominant Equity contribution identified in Section 3.3.
 
 Interest-rate factors represent the next major source of loss. `USD_20Y_RATE` contributes **-$1.58 million (-1.58% of NAV)** through the TLT position, while `USD_7Y_RATE` contributes **-$1.53 million (-1.53%)** through IEF. The particularly large contribution from the 20-year factor reflects TLT's high modified duration, which amplifies the effect of a given yield shock on the position's value.
 
@@ -632,7 +630,7 @@ At the same time, the decomposition reveals a second source of vulnerability: th
 
 The Stagflation scenario consequently highlights two related dimensions of portfolio vulnerability: **concentration in Equity risk factors and adverse cross-asset interaction between Equity, Rates, and Credit risk**. Gold provides a visible hedge, but its contribution is too small to counterbalance these larger exposures.
 
-### 4.5 Hypothetical Stress Findings
+### 3.5 Hypothetical Stress Findings
 
 The hypothetical stress analysis identifies three principal features of the portfolio's risk profile.
 
@@ -648,11 +646,11 @@ The central hypothetical stress finding can therefore be summarized as:
 
 Stagflation Shock represents the clearest example of this vulnerability within the hypothetical scenario set. The historical analysis in the following section examines whether similar diversification patterns appear under realized periods of market stress.
 
-## 5. Historical Stress Testing Results
+## 4. Historical Stress Testing Results
 
 Historical stress testing provides an empirical complement to the hypothetical scenario analysis by applying market movements observed during selected periods of financial stress to the portfolio's current exposures. The three historical scenarios capture materially different market environments: the rapid cross-asset dislocation associated with the COVID-19 market crash, the inflation-driven repricing of Equity and fixed-income markets during 2022, and the flight-to-quality dynamics surrounding the 2023 regional banking stress.
 
-### 5.1 Historical Scenario Comparison
+### 4.1 Historical Scenario Comparison
 
 The historical scenarios produce substantially different portfolio outcomes, demonstrating that portfolio vulnerability depends not only on the magnitude of market stress but also on the cross-asset relationships prevailing during the episode.
 
@@ -674,7 +672,7 @@ The 2023 Regional Banking Stress provides the strongest contrast. Although the e
 
 Taken together, the historical scenarios reveal a central theme that is also visible in the hypothetical analysis: **the portfolio is most vulnerable when Equity weakness coincides with losses in its fixed-income exposures, reducing the diversification benefit normally expected from Rates**. The individual historical scenarios are examined in greater detail in the following subsections.
 
-### 5.2 COVID-19 Market Crash
+### 4.2 COVID-19 Market Crash
 
 The COVID-19 Market Crash produces a portfolio loss of approximately **$16.39 million, or 16.39% of NAV**, over the historical window from February 19, 2020 to March 23, 2020. The episode is characterized by severe losses across Equity and Credit exposures, partially offset by gains in the portfolio's Treasury positions.
 
@@ -728,7 +726,7 @@ The Rates allocation does not prevent a substantial portfolio drawdown because t
 
 This historical episode also provides an important contrast with the 2022 Inflation / Rates Sell-Off. During the COVID-19 stress window, Treasury exposure acts defensively and partially offsets the Equity drawdown. During the 2022 episode, that relationship reverses, with both Equity and Rates becoming significant sources of loss. The comparison demonstrates why the effectiveness of portfolio diversification depends critically on the macroeconomic structure of the stress event.
 
-### 5.3 2022 Inflation / Rates Sell-Off
+### 4.3 2022 Inflation / Rates Sell-Off
 
 The 2022 Inflation / Rates Sell-Off is the most severe of the three historical scenarios, producing a portfolio loss of approximately **$23.09 million, or 23.09% of NAV**, over the historical window from January 3, 2022 to October 14, 2022. The severity of the result reflects broad losses across Equity, Rates, Credit, and Commodity exposures, with only FX providing a small positive net contribution.
 
@@ -794,7 +792,7 @@ This represents a swing of approximately **7.87% of NAV** in the Rates contribut
 
 The 2022 historical episode therefore provides the clearest realized example in the analysis of the portfolio's vulnerability to simultaneous Equity and fixed-income weakness. This pattern closely parallels the diversification breakdown identified under the hypothetical Stagflation Shock and provides an important connection between the historical and hypothetical stress frameworks.
 
-### 5.4 2023 Regional Banking Stress
+### 4.4 2023 Regional Banking Stress
 
 The 2023 Regional Banking Stress produces a positive portfolio result of approximately **$2.45 million, or 2.45% of NAV**, over the historical window from March 8, 2023 to March 24, 2023. Unlike the COVID-19 Market Crash and the 2022 Inflation / Rates Sell-Off, this historical episode does not generate a portfolio loss. Gains across Rates, Commodity, Credit, and selected Equity exposures more than offset the relatively small losses generated elsewhere in the portfolio.
 
@@ -860,7 +858,7 @@ These results reinforce the conclusion that the portfolio's stress outcome depen
 
 The Regional Banking Stress also demonstrates why historical scenarios should not be ranked solely according to the perceived severity of the underlying market event. Historical replay evaluates the interaction between a specific market episode and the portfolio's current exposures. In this case, the combination of Treasury gains, Gold appreciation, positive QQQ performance, and gains in LQD is sufficient to produce a positive overall portfolio result despite the presence of financial-sector stress.
 
-### 5.5 Historical Stress Findings
+### 4.5 Historical Stress Findings
 
 The historical stress analysis demonstrates that portfolio outcomes vary materially across market regimes. Although Equity is the portfolio's largest structural source of downside, the severity of the overall stress result depends critically on whether other major exposures offset or reinforce Equity losses.
 
@@ -888,11 +886,11 @@ The position-level analysis also reinforces the importance of exposure size in s
 
 Taken together, the historical scenarios show that the portfolio is most vulnerable when **Equity weakness coincides with adverse fixed-income performance and broader cross-asset repricing**. Conversely, the portfolio is more resilient when Treasury and other defensive exposures appreciate as risk assets weaken. These findings provide an empirical counterpart to the diversification patterns identified under the hypothetical stress framework and form the basis for the cross-framework comparison in the following section.
 
-## 6. Cross-Framework Risk Analysis
+## 5. Cross-Framework Risk Analysis
 
 The historical and hypothetical stress frameworks provide complementary perspectives on the portfolio's risk profile. Historical replay measures the effect of market movements that actually occurred during selected stress periods, while hypothetical analysis evaluates the portfolio under deliberately constructed combinations of risk-factor shocks. Comparing the two frameworks helps distinguish vulnerabilities that persist across different forms of stress from those that depend on a particular scenario design or historical market regime.
 
-### 6.1 Historical vs. Hypothetical Scenario Comparison
+### 5.1 Historical vs. Hypothetical Scenario Comparison
 
 Across the seven scenarios evaluated in the analysis, portfolio outcomes range from a gain of approximately **4.47% of NAV** under Growth / Risk-On Rally to a loss of approximately **23.09% of NAV** during the 2022 Inflation / Rates Sell-Off.
 
@@ -934,7 +932,7 @@ The cross-framework pattern can therefore be summarized as:
 
 The historical and hypothetical frameworks reach this conclusion through different methodologies, but both demonstrate that portfolio stress becomes more severe when major risk exposures become adversely aligned.
 
-### 6.2 Integrated Portfolio Risk Assessment
+### 5.2 Integrated Portfolio Risk Assessment
 
 Taken together, the historical and hypothetical stress results reveal a consistent portfolio risk profile. The portfolio's largest structural vulnerability is its concentration in Equity exposure, but the severity of portfolio losses depends critically on how the remaining asset classes behave when Equity markets decline.
 
@@ -944,7 +942,7 @@ Gold provides a useful but limited source of diversification in several scenario
 
 The principal risk-management implication is that portfolio resilience depends not only on diversification across asset-class labels, but on diversification across underlying economic risk drivers. A portfolio that appears diversified under normal conditions can become significantly more concentrated when several exposures respond adversely to the same macroeconomic regime.
 
-## 7. Model Limitations and Considerations
+## 6. Model Limitations and Considerations
 
 The stress-testing framework is designed to provide a transparent and interpretable assessment of portfolio vulnerability under selected adverse market conditions. The results should nevertheless be considered in light of several modeling limitations.
 
@@ -962,7 +960,7 @@ Finally, the scenario set is intentionally selective rather than exhaustive. The
 
 For these reasons, the reported stress losses should be interpreted as **conditional estimates under defined assumptions rather than forecasts, probabilities, or estimates of maximum possible loss**. The framework is most useful for identifying concentrations, diversification behavior, and potential channels of portfolio vulnerability across contrasting stress regimes.
 
-## 8. Conclusion
+## 7. Conclusion
 
 This report developed a multi-asset stress-testing framework to evaluate a $100 million portfolio across both hypothetical and historical market environments. The combination of risk-factor-based hypothetical stress and historical replay provides complementary perspectives on portfolio vulnerability, allowing the analysis to examine both explicitly defined economic shocks and cross-asset relationships observed during realized periods of market stress.
 
