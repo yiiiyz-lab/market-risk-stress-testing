@@ -122,6 +122,7 @@ market-risk-stress-testing/
 │   └── tables/              # Generated stress-testing results
 ├── report/
 │   └── market_risk_stress_testing_report.md
+├── LICENSE
 ├── README.md
 └── requirements.txt
 ```
