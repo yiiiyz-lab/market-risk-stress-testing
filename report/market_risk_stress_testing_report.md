@@ -83,17 +83,7 @@ This structure allows the hypothetical stress framework to distinguish between d
 
 The mapping can be summarized as:
 
-$$
-\mathrm{Scenario\ Shock}
-\rightarrow
-\mathrm{Risk\ Factor}
-\rightarrow
-\mathrm{Position\ P\&L}
-\rightarrow
-\mathrm{Asset\text{-}Class\ P\&L}
-\rightarrow
-\mathrm{Portfolio\ P\&L}
-$$
+**Scenario Shock → Risk Factor → Position P&L → Asset-Class P&L → Portfolio P&L**
 
 This risk-factor mapping is specific to the hypothetical stress-testing framework. Historical stress testing does not require the same factor mapping because it applies observed historical returns directly to each portfolio instrument.
 
@@ -144,15 +134,9 @@ where:
 
 A widening of credit spreads therefore produces a negative price effect, while spread tightening produces a positive price effect.
 
-In this portfolio, LQD and HYG contain both interest-rate and credit-spread exposure. Their hypothetical stressed P&L can therefore reflect two separate channels:
+In this portfolio, LQD and HYG contain both interest-rate and credit-spread exposure. Their hypothetical stressed P&L can therefore be decomposed into two separate channels:
 
-$$
-\mathrm{Credit\ Position\ Stress}
-=
-\mathrm{Interest\text{-}Rate\ Contribution}
-+
-\mathrm{Credit\text{-}Spread\ Contribution}
-$$
+**Credit Position Stress = Interest-Rate Contribution + Credit-Spread Contribution**
 
 This decomposition is important because the two components need not move in the same direction. In a conventional risk-off environment, falling Treasury yields may partially offset losses caused by widening credit spreads. In an inflationary stress, rising Treasury yields and widening credit spreads may instead generate losses simultaneously.
 
@@ -181,33 +165,13 @@ The stress-testing framework evaluates the portfolio under two complementary app
 
 The hypothetical framework therefore follows the structure:
 
-$$
-\mathrm{Scenario}
-\rightarrow
-\mathrm{Risk\text{-}Factor\ Shocks}
-\rightarrow
-\mathrm{Position\ Sensitivities}
-\rightarrow
-\mathrm{Position\ P\&L}
-\rightarrow
-\mathrm{Portfolio\ P\&L}
-$$
+**Scenario → Risk-Factor Shocks → Position Sensitivities → Position P&L → Portfolio P&L**
 
 **Historical stress testing**, by contrast, does not specify risk-factor shocks or sensitivities. Instead, it measures the actual returns experienced by the portfolio's instruments over selected historical stress windows and applies those observed returns to the portfolio's current exposures. The approach therefore asks how the current portfolio would perform if the selected historical pattern of market movements were replayed.
 
 The historical framework follows:
 
-$$
-\mathrm{Historical\ Stress\ Window}
-\rightarrow
-\mathrm{Observed\ Instrument\ Returns}
-\rightarrow
-\mathrm{Current\ Position\ Exposures}
-\rightarrow
-\mathrm{Position\ P\&L}
-\rightarrow
-\mathrm{Portfolio\ P\&L}
-$$
+**Historical Stress Window → Observed Instrument Returns → Current Position Exposures → Position P&L → Portfolio P&L**
 
 The two approaches provide different but complementary perspectives on portfolio risk. Hypothetical scenarios provide greater control over the economic structure of a stress event and allow losses to be decomposed into individual modeled risk factors. Historical scenarios preserve the joint market behavior observed during actual periods of stress, including relationships across asset classes that do not need to be specified individually by the model.
 
@@ -232,7 +196,7 @@ Let:
 All percentage-return shocks are represented in decimal form. Interest-rate and credit-spread shocks are also converted to decimal yield or spread changes before entering the duration-based calculations. For example, a 100-basis-point increase corresponds to:
 
 $$
-100\,\mathrm{bps} = 0.01
+100 \text{ bps} = 0.01
 $$
 
 #### 3.2.1 Direct-Return Risk Factors
@@ -240,13 +204,7 @@ $$
 For direct-return factors, stressed P&L is calculated by applying the specified percentage shock to the position exposure, adjusted by the assigned factor sensitivity:
 
 $$
-P\&L_{i,f}
-=
-E_i
-\times
-\beta_{i,f}
-\times
-\Delta F_f
+\mathrm{PnL}_{i,f} = E_i \times \beta_{i,f} \times \Delta F_f
 $$
 
 This methodology is used for the modeled Equity, Commodity, and FX factors, including `SPX`, `NASDAQ`, `EU_EQUITY`, `GOLD`, `EURUSD`, and `USDJPY`.
@@ -254,14 +212,10 @@ This methodology is used for the modeled Equity, Commodity, and FX factors, incl
 For example, if a $25 million SPY position has a sensitivity of 1.0 to the SPX factor and the scenario specifies a -20% SPX shock:
 
 $$
-P\&L_{\mathrm{SPY}}
-=
-\$25\,\mathrm{m}
-\times 1.0
-\times (-0.20)
-=
--\$5\,\mathrm{m}
+\mathrm{PnL}_{\mathrm{SPY}} = 25{,}000{,}000 \times 1.0 \times (-0.20) = -5{,}000{,}000
 $$
+
+The resulting stress loss is **$5.0 million**.
 
 The same framework accommodates partial factor sensitivity. VGK, for example, has a primary sensitivity of 1.0 to `EU_EQUITY` and an additional sensitivity of 0.35 to `EURUSD`. Its total hypothetical P&L is therefore the sum of the contributions generated by both factors.
 
@@ -270,12 +224,7 @@ The same framework accommodates partial factor sensitivity. VGK, for example, ha
 For interest-rate exposures, the framework uses a first-order modified-duration approximation. The factor-level P&L is estimated as:
 
 $$
-P\&L_{i,f}
-\approx
--E_i
-\times D_i
-\times \beta_{i,f}
-\times \Delta y_f
+\mathrm{PnL}_{i,f} \approx -E_i \times D_i \times \beta_{i,f} \times \Delta y_f
 $$
 
 The negative sign captures the inverse relationship between bond prices and yields. A positive yield shock therefore generates a negative estimated P&L, while a decline in yields generates a positive estimated P&L.
@@ -283,15 +232,10 @@ The negative sign captures the inverse relationship between bond prices and yiel
 For example, consider the $10 million TLT position with a modified duration of 15.8 and a sensitivity of 1.0 to the USD 20-year rate factor. Under a hypothetical 100-basis-point increase in the 20-year yield:
 
 $$
-P\&L_{\mathrm{TLT}}
-\approx
--\$10\,\mathrm{m}
-\times 15.8
-\times 1.0
-\times 0.01
-=
--\$1.58\,\mathrm{m}
+\mathrm{PnL}_{\mathrm{TLT}} \approx -10{,}000{,}000 \times 15.8 \times 1.0 \times 0.01 = -1{,}580{,}000
 $$
+
+The resulting estimated stress loss is **$1.58 million**.
 
 The same methodology is applied to IEF and to the interest-rate components of LQD and HYG using their respective rate factors and modified-duration assumptions.
 
@@ -300,12 +244,7 @@ The same methodology is applied to IEF and to the interest-rate components of LQ
 Credit instruments are additionally exposed to changes in corporate credit spreads. The spread component of stressed P&L is estimated using spread duration:
 
 $$
-P\&L_{i,f}
-\approx
--E_i
-\times SD_i
-\times \beta_{i,f}
-\times \Delta s_f
+\mathrm{PnL}_{i,f} \approx -E_i \times SD_i \times \beta_{i,f} \times \Delta s_f
 $$
 
 A positive spread shock represents spread widening and therefore produces a negative price effect. Spread tightening produces the opposite result.
@@ -313,11 +252,7 @@ A positive spread shock represents spread widening and therefore produces a nega
 Because LQD and HYG are exposed to both interest-rate and credit-spread factors, their total stressed P&L combines the two effects. For a credit position $i$:
 
 $$
-P\&L_i
-=
-P\&L_{i,\mathrm{rate}}
-+
-P\&L_{i,\mathrm{spread}}
+\mathrm{PnL}_i = \mathrm{PnL}_{i,\mathrm{rate}} + \mathrm{PnL}_{i,\mathrm{spread}}
 $$
 
 This allows the framework to distinguish between losses caused by movements in the underlying Treasury curve and losses caused by changes in credit risk premia.
@@ -327,45 +262,33 @@ This allows the framework to distinguish between losses caused by movements in t
 A position may be exposed to one or more modeled risk factors. Its total stressed P&L is calculated by summing all factor-level contributions:
 
 $$
-P\&L_i
-=
-\sum_f P\&L_{i,f}
+\mathrm{PnL}_i = \sum_f \mathrm{PnL}_{i,f}
 $$
 
 The position's stressed return is then:
 
 $$
-R_i^{\mathrm{stress}}
-=
-\frac{P\&L_i}{E_i}
+R_i^{\mathrm{stress}} = \frac{\mathrm{PnL}_i}{E_i}
 $$
 
 Portfolio-level stressed P&L is obtained by aggregating across all positions:
 
 $$
-P\&L_{\mathrm{portfolio}}
-=
-\sum_i P\&L_i
+\mathrm{PnL}_{\mathrm{portfolio}} = \sum_i \mathrm{PnL}_i
 $$
 
 To make scenario severity directly comparable across scenarios and asset classes, portfolio P&L is also expressed relative to portfolio NAV:
 
 $$
-P\&L_{\%\mathrm{NAV}}
-=
-\frac{P\&L_{\mathrm{portfolio}}}
-{\mathrm{NAV}}
+\mathrm{PnL}_{\%\mathrm{NAV}} =
+\frac{\mathrm{PnL}_{\mathrm{portfolio}}}{\mathrm{NAV}}
 \times 100
 $$
 
 With a portfolio NAV of $100 million, a stress loss of $15 million therefore corresponds to:
 
 $$
-\frac{-\$15\,\mathrm{m}}
-{\$100\,\mathrm{m}}
-\times 100
-=
--15.0\%
+\frac{-15{,}000{,}000}{100{,}000{,}000} \times 100 = -15.0\%
 $$
 
 The same normalization is applied to position-level, asset-class, and risk-factor contributions when they are reported as percentages of NAV.
@@ -374,28 +297,20 @@ The same normalization is applied to position-level, asset-class, and risk-facto
 
 Because hypothetical stress is calculated initially at the risk-factor level, the resulting portfolio loss can be decomposed through several analytical layers:
 
-$$
-\mathrm{Risk\text{-}Factor\ P\&L}
-\rightarrow
-\mathrm{Position\ P\&L}
-\rightarrow
-\mathrm{Asset\text{-}Class\ P\&L}
-\rightarrow
-\mathrm{Portfolio\ P\&L}
-$$
+**Risk-Factor P&L → Position P&L → Asset-Class P&L → Portfolio P&L**
 
 Risk-factor attribution identifies the modeled economic shocks responsible for the result. Position attribution identifies the individual instruments through which those shocks affect the portfolio, while asset-class attribution aggregates the same P&L into broader portfolio risk categories.
 
 This decomposition is additive. Subject to rounding:
 
 $$
-\sum_f P\&L_f
+\sum_f \mathrm{PnL}_f
 =
-\sum_i P\&L_i
+\sum_i \mathrm{PnL}_i
 =
-\sum_a P\&L_a
+\sum_a \mathrm{PnL}_a
 =
-P\&L_{\mathrm{portfolio}}
+\mathrm{PnL}_{\mathrm{portfolio}}
 $$
 
 where $a$ denotes asset class.
@@ -420,15 +335,7 @@ For each scenario, historical market prices are obtained for the instruments rep
 
 The historical framework therefore represents a replay analysis:
 
-$$
-\mathrm{Historical\ Stress\ Window}
-\rightarrow
-\mathrm{Observed\ Instrument\ Returns}
-\rightarrow
-\mathrm{Current\ Portfolio\ Exposures}
-\rightarrow
-\mathrm{Stress\ P\&L}
-$$
+**Historical Stress Window → Observed Instrument Returns → Current Portfolio Exposures → Stress P&L**
 
 #### 3.3.2 Historical Return and P&L Calculation
 
@@ -439,7 +346,7 @@ R_{i,h}
 =
 \frac{P_{i,h}^{\mathrm{end}}}
 {P_{i,h}^{\mathrm{start}}}
--1
+- 1
 $$
 
 where:
@@ -451,25 +358,18 @@ where:
 The observed historical return is then applied directly to the current USD exposure of the position:
 
 $$
-P\&L_{i,h}
-=
-E_i
-\times
-R_{i,h}
+\mathrm{PnL}_{i,h} = E_i \times R_{i,h}
 $$
 
 where $E_i$ is the current USD exposure of position $i$.
 
-For example, if a position currently has an exposure of $25 million and its instrument experienced a -30% return during the selected historical window, its historical stress P&L would be:
+For example, if a position currently has an exposure of $25 million and its instrument experienced a -30% return during the selected historical window:
 
 $$
-P\&L
-=
-\$25\,\mathrm{m}
-\times (-0.30)
-=
--\$7.5\,\mathrm{m}
+\mathrm{PnL} = 25{,}000{,}000 \times (-0.30) = -7{,}500{,}000
 $$
+
+The resulting historical stress loss is **$7.5 million**.
 
 The calculation therefore answers a counterfactual question: how would the portfolio's current exposures perform if the instrument-level market movements observed during the historical episode were repeated?
 
@@ -478,17 +378,17 @@ The calculation therefore answers a counterfactual question: how would the portf
 Historical position-level P&L is aggregated to obtain total portfolio stress P&L:
 
 $$
-P\&L_{\mathrm{portfolio},h}
+\mathrm{PnL}_{\mathrm{portfolio},h}
 =
-\sum_i P\&L_{i,h}
+\sum_i \mathrm{PnL}_{i,h}
 $$
 
 As in the hypothetical framework, the portfolio result is normalized by current portfolio NAV:
 
 $$
-P\&L_{\%\mathrm{NAV},h}
+\mathrm{PnL}_{\%\mathrm{NAV},h}
 =
-\frac{P\&L_{\mathrm{portfolio},h}}
+\frac{\mathrm{PnL}_{\mathrm{portfolio},h}}
 {\mathrm{NAV}}
 \times 100
 $$
@@ -496,24 +396,16 @@ $$
 Position-level results can also be aggregated by asset class:
 
 $$
-P\&L_{a,h}
+\mathrm{PnL}_{a,h}
 =
-\sum_{i \in a} P\&L_{i,h}
+\sum_{i \in a} \mathrm{PnL}_{i,h}
 $$
 
 where $a$ denotes an asset class.
 
 The resulting decomposition therefore follows:
 
-$$
-\mathrm{Observed\ Instrument\ Returns}
-\rightarrow
-\mathrm{Position\ P\&L}
-\rightarrow
-\mathrm{Asset\text{-}Class\ P\&L}
-\rightarrow
-\mathrm{Portfolio\ P\&L}
-$$
+**Observed Instrument Returns → Position P&L → Asset-Class P&L → Portfolio P&L**
 
 Historical stress attribution is reported at the position and asset-class levels. Risk-factor attribution is not applied to historical scenarios because the framework directly uses realized instrument returns rather than decomposing those returns into modeled factor shocks. This distinction preserves the methodological separation between the historical and hypothetical approaches.
 
@@ -521,7 +413,7 @@ Historical stress attribution is reported at the position and asset-class levels
 
 Historical stress results should be interpreted as conditional replay estimates rather than forecasts. They show the estimated effect on the current portfolio if the selected historical pattern of instrument returns were repeated, holding current portfolio exposures constant.
 
-A key advantage of this approach is that the historical returns jointly reflect market relationships that actually occurred during the selected episode. For example, an historical stress period may simultaneously contain equity declines, changes in Treasury prices, credit-market repricing, currency movements, and changes in commodity prices. These relationships are captured through the observed instrument returns without requiring the model to specify each relationship separately.
+A key advantage of this approach is that the historical returns jointly reflect market relationships that actually occurred during the selected episode. For example, a historical stress period may simultaneously contain equity declines, changes in Treasury prices, credit-market repricing, currency movements, and changes in commodity prices. These relationships are captured through the observed instrument returns without requiring the model to specify each relationship separately.
 
 Historical replay nevertheless depends on the selected scenario window. Different start and end dates can materially change measured returns and therefore estimated portfolio losses. In addition, a past episode does not necessarily represent the structure or severity of a future crisis. Historical stress should therefore be viewed as an empirical reference scenario rather than a complete representation of the portfolio's possible future loss distribution.
 
@@ -684,17 +576,9 @@ Stagflation Shock produces the most severe result among the four hypothetical sc
 
 ![Stagflation Shock Asset-Class Attribution](../outputs/figures/stagflation_asset_class_attribution.png)
 
-The portfolio loss can be decomposed as:
+The -15.00% portfolio loss can be decomposed as:
 
-$$
--15.00\%
-=
--10.27\%_{\mathrm{Equity}}
--3.11\%_{\mathrm{Rates}}
--2.14\%_{\mathrm{Credit}}
--0.07\%_{\mathrm{FX}}
-+0.60\%_{\mathrm{Commodity}}
-$$
+**Equity (-10.27%) + Rates (-3.11%) + Credit (-2.14%) + FX (-0.07%) + Commodity (+0.60%) = Portfolio (-15.00%)**
 
 Equity is the dominant source of loss, contributing approximately **-$10.28 million, or -10.27% of NAV**. This represents more than two-thirds of the gross negative contribution before diversification offsets and reflects losses across SPY, QQQ, and VGK. Given that Equity represents 50% of portfolio NAV, the result confirms that the portfolio's largest allocation is also its primary source of downside under the scenario.
 
@@ -706,17 +590,11 @@ FX contributes a comparatively small loss of approximately **-$70,000, or -0.07%
 
 Commodity is the only asset class to provide a meaningful positive contribution. The GLD position generates a gain of **$600,000, or 0.60% of NAV**, partially offsetting losses elsewhere in the portfolio. However, because Commodity represents only 5% of NAV, the positive contribution is insufficient to materially change the overall stress outcome.
 
-The Stagflation result therefore illustrates a form of **cross-asset loss concentration**. The severity of the scenario does not arise from a single exceptionally large position loss alone; rather, it results from the alignment of negative contributions across several major portfolio exposures:
+The Stagflation result therefore illustrates a form of **cross-asset loss concentration**. The severity of the scenario does not arise from a single exceptionally large position loss alone; rather, it results from the alignment of negative contributions across several major portfolio exposures.
 
-$$
-\mathrm{Equity}\downarrow
-+
-\mathrm{Rates}\downarrow
-+
-\mathrm{Credit}\downarrow
->
-\mathrm{Commodity\ Hedge}
-$$
+The structure of the scenario can be summarized as:
+
+**Equity Losses + Rates Losses + Credit Losses > Commodity Hedge**
 
 This structure is particularly damaging because the portfolio's principal defensive fixed-income allocation becomes positively aligned with the direction of Equity losses. Gold continues to provide diversification, but its smaller portfolio weight limits the magnitude of the offset.
 
@@ -742,29 +620,15 @@ Gold is the largest positive risk-factor contributor. The `GOLD` shock generates
 
 The risk-factor decomposition can be summarized conceptually as:
 
-$$
-\mathrm{Equity\ Factor\ Losses}
-+
-\mathrm{Rate\ Factor\ Losses}
-+
-\mathrm{Spread\ Losses}
-+
-\mathrm{FX\ Effects}
-+
-\mathrm{Gold\ Offset}
-=
-\mathrm{Portfolio\ Stress\ P\&L}
-$$
+**Equity-Factor Losses + Rate-Factor Losses + Spread Losses + FX Effects + Gold Offset = Portfolio Stress P&L**
 
 A useful feature of the decomposition is that it distinguishes **portfolio allocation from underlying risk concentration**. The portfolio contains ten individual instruments across five asset classes, but a substantial portion of the Stagflation loss is concentrated in a relatively small number of risk factors. In particular, `SPX`, `NASDAQ`, and `EU_EQUITY` collectively contribute approximately:
 
 $$
--\$4.50\,\mathrm{m}
--\$3.60\,\mathrm{m}
--\$2.00\,\mathrm{m}
-=
--\$10.10\,\mathrm{m}
+-4{,}500{,}000 - 3{,}600{,}000 - 2{,}000{,}000 = -10{,}100{,}000
 $$
+
+The three primary Equity risk factors therefore contribute a combined **-$10.10 million**.
 
 This concentration reflects the portfolio's 50% Equity allocation and demonstrates that diversification by instrument count does not necessarily imply diversification by underlying economic risk.
 
