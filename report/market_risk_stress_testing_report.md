@@ -1,7 +1,5 @@
 # Market Risk Stress Testing
 
----
-
 ## Executive Summary
 
 This report evaluates the stress resilience of a hypothetical **$100 million multi-asset portfolio** using complementary historical and hypothetical stress-testing frameworks. The portfolio contains exposures across Equity, Rates, Credit, FX, and Commodity asset classes. Historical stress testing replays realized instrument returns from selected periods of market disruption, while hypothetical stress testing applies predefined shocks to modeled risk factors and translates those shocks into position- and portfolio-level P&L.
