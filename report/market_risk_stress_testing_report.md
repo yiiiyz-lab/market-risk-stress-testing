@@ -376,7 +376,7 @@ $$
 As in the hypothetical framework, the portfolio result is normalized by current portfolio NAV:
 
 $$
-\frac{\mathrm{PnL}_{portfolio,h}}{NAV} \times 100
+\frac{\mathrm{PnL}_{portfolio,h}}{\mathrm{NAV}} \times 100
 $$
 
 This expresses historical portfolio P&L as a percentage of NAV for scenario $h$.
@@ -468,11 +468,9 @@ $$
 \mathrm{Rate\ Losses}
 $$
 
-This distinction is particularly important for the portfolio because Equity and Rates represent its two largest asset-class allocations. The effectiveness of fixed-income exposure as a portfolio diversifier therefore depends materially on the economic structure of the stress event.
+This distinction is particularly relevant because Equity and Rates represent the portfolio's two largest asset-class allocations. The scenario set is therefore designed to test how changes in the relationship between these exposures affect portfolio-level stress outcomes.
 
-The historical and hypothetical scenarios also provide useful points of comparison. The 2022 Inflation / Rates Sell-Off offers a realized example of simultaneous equity and fixed-income weakness, while the hypothetical Stagflation Shock and Rates Higher for Longer scenarios examine related vulnerabilities under explicitly defined factor shocks. Conversely, the historical COVID-19 and Regional Banking Stress episodes provide examples in which falling rates can support fixed-income positions during periods of market stress.
-
-The scenario framework therefore evaluates not only the magnitude of portfolio losses, but also how the sources of those losses and the effectiveness of diversification change across different market environments.
+The historical and hypothetical scenarios provide complementary tests of these relationships under both realized market conditions and explicitly defined factor shocks.
 
 ## 4. Hypothetical Stress Testing Results
 
@@ -484,10 +482,10 @@ The four hypothetical scenarios produce materially different portfolio outcomes,
 
 | Scenario | Portfolio Stress P&L | P&L (% NAV) |
 |---|---:|---:|
-| Stagflation Shock | -$15,000,000 | -15.00% |
-| Rates Higher for Longer | -$12,950,500 | -12.95% |
-| Global Risk-Off | -$8,570,500 | -8.57% |
-| Growth / Risk-On Rally | $4,466,500 | 4.47% |
+| Stagflation Shock | -$15.00 million | -15.00% |
+| Rates Higher for Longer | -$12.95 million | -12.95% |
+| Global Risk-Off | -$8.57 million | -8.57% |
+| Growth / Risk-On Rally | $4.47 million | 4.47% |
 
 **Figure 1. Hypothetical Scenario Stress Comparison**
 
@@ -544,7 +542,7 @@ $$
 
 The contrast demonstrates that the diversification benefit of Treasury exposure is conditional on the underlying economic regime. Rates provide meaningful protection when market stress is accompanied by falling yields, but they become an additional source of loss when inflation or monetary tightening pushes yields higher.
 
-**Credit** contributes negatively in all four hypothetical scenarios, although the magnitude varies substantially. The largest Credit losses occur under Stagflation Shock (-2.14% of NAV) and Rates Higher for Longer (-1.99%), where interest-rate pressure combines with adverse credit-spread movements. Under Global Risk-Off, the Credit loss is much smaller at 0.23% of NAV because gains from declining underlying Treasury yields partially offset the effect of wider credit spreads. The Growth / Risk-On Rally also produces a modest Credit loss of 0.63% of NAV because the benefit from spread tightening is insufficient to offset the negative impact of higher underlying rates within the specified scenario.
+**Credit** contributes negatively in all four hypothetical scenarios, although the magnitude varies substantially. The largest Credit losses occur under Stagflation Shock (-2.14% of NAV) and Rates Higher for Longer (-1.99%), where interest-rate pressure combines with adverse credit-spread movements. Under Global Risk-Off, the Credit loss is much smaller at -0.23% of NAV because gains from declining underlying Treasury yields partially offset the effect of wider credit spreads. The Growth / Risk-On Rally also produces a modest Credit loss of -0.63% of NAV because the benefit from spread tightening is insufficient to offset the negative impact of higher underlying rates within the specified scenario.
 
 **Commodity exposure**, represented by gold, provides a positive contribution under both Global Risk-Off and Stagflation Shock, adding 0.50% and 0.60% of NAV, respectively. These gains provide diversification but remain small relative to the portfolio's Equity, Rates, and Credit exposures because Commodity represents only 5% of NAV. Gold therefore acts as a partial offset rather than a sufficient hedge against broad portfolio losses. Under Rates Higher for Longer and Growth / Risk-On Rally, Commodity contributes modest losses.
 
@@ -624,33 +622,19 @@ The Stagflation scenario consequently highlights two related dimensions of portf
 
 ### 4.5 Hypothetical Stress Findings
 
-The hypothetical stress analysis highlights several important characteristics of the portfolio's risk profile.
+The hypothetical stress analysis identifies three principal features of the portfolio's risk profile.
 
-First, **Equity is the portfolio's dominant source of directional risk**. With 50% of NAV allocated to Equity, adverse shocks to `SPX`, `NASDAQ`, and `EU_EQUITY` generate the largest individual risk-factor losses across the downside scenarios. This concentration is particularly visible under Stagflation Shock, where Equity contributes -10.27% of NAV to the total -15.00% portfolio result.
+First, **Equity is the dominant source of directional risk**, reflecting the portfolio's 50% allocation to the asset class. Equity generates the largest negative contribution across the major downside scenarios and is the primary driver of losses under Stagflation Shock and Global Risk-Off.
 
-Second, **the diversification benefit of the Rates allocation is strongly scenario-dependent**. Under Global Risk-Off, falling Treasury yields generate a positive Rates contribution of 2.51% of NAV, materially reducing the effect of the Equity drawdown. Under Stagflation Shock and Rates Higher for Longer, however, rising yields cause Rates to lose 3.11% and 4.80% of NAV, respectively. Fixed-income exposure therefore functions as an effective hedge in some stress environments but becomes an additional source of loss in inflationary and rising-rate regimes.
+Second, **the diversification benefit of Rates is strongly scenario-dependent**. Treasury exposure provides a meaningful positive offset under Global Risk-Off but becomes a substantial source of loss under Stagflation Shock and Rates Higher for Longer. The effectiveness of fixed income as a portfolio hedge therefore depends on the economic source of the stress event.
 
-Third, **Credit introduces multiple channels of stress transmission**. LQD and HYG are exposed to both movements in underlying Treasury rates and changes in corporate credit spreads. As a result, Credit losses can arise even when spread movements alone appear moderate. This is especially relevant under Stagflation Shock and Rates Higher for Longer, where adverse rate and spread effects reinforce one another.
+Third, **portfolio stress becomes most severe when multiple risk channels become adversely aligned**. Stagflation Shock combines Equity weakness, rising rates, and Credit deterioration, while the positive contribution from gold is insufficient to offset losses across the portfolio's larger allocations.
 
-Fourth, **gold provides diversification, but the hedge is limited by portfolio weight**. Commodity exposure contributes positively under both Global Risk-Off and Stagflation Shock, including a 0.60% of NAV gain under Stagflation. However, the 5% Commodity allocation is too small to offset simultaneous losses across the substantially larger Equity, Rates, and Credit allocations.
+The central hypothetical stress finding can therefore be summarized as:
 
-Finally, the scenario comparison demonstrates that **portfolio stress severity depends on cross-asset interaction rather than on the largest individual asset-class loss alone**. Global Risk-Off produces a larger Equity loss than Stagflation Shock (-11.23% versus -10.27% of NAV), yet its total portfolio loss is considerably smaller (-8.57% versus -15.00%). The difference is primarily explained by the behavior of Rates: they provide a positive offset under Global Risk-Off but reinforce losses under Stagflation.
+**Equity Weakness + Rising Rates + Credit Deterioration → Diversification Breakdown**
 
-The central hypothetical stress finding is therefore that the portfolio is most vulnerable when its major sources of risk become adversely aligned:
-
-$$
-\mathrm{Equity\ Weakness}
-+
-\mathrm{Rising\ Rates}
-+
-\mathrm{Credit\ Deterioration}
-\rightarrow
-\mathrm{Diversification\ Breakdown}
-$$
-
-Stagflation Shock represents the clearest example of this vulnerability within the hypothetical scenario set. Conversely, Global Risk-Off demonstrates that the portfolio can absorb a substantial Equity drawdown more effectively when Treasury duration and gold behave defensively.
-
-These results suggest that the portfolio's resilience cannot be assessed from asset allocation alone. The effectiveness of diversification depends on the relationships among risk factors under the specific stress environment. The historical stress analysis in the following section provides an empirical comparison by examining whether similar patterns of diversification and cross-asset loss concentration occurred during realized periods of market stress.
+Stagflation Shock represents the clearest example of this vulnerability within the hypothetical scenario set. The historical analysis in the following section examines whether similar diversification patterns appear under realized periods of market stress.
 
 ## 5. Historical Stress Testing Results
 
@@ -866,11 +850,9 @@ The Regional Banking Stress also demonstrates why historical scenarios should no
 
 ### 5.5 Historical Stress Findings
 
-The three historical scenarios demonstrate that portfolio stress severity is determined not only by the magnitude of individual asset-price movements but also by the interaction among the portfolio's major exposures. The historical results range from a loss of **23.09% of NAV** during the 2022 Inflation / Rates Sell-Off to a gain of **2.45% of NAV** during the 2023 Regional Banking Stress, despite all three scenarios representing periods of significant market disruption.
+The historical stress analysis demonstrates that portfolio outcomes vary materially across market regimes. Although Equity is the portfolio's largest structural source of downside, the severity of the overall stress result depends critically on whether other major exposures offset or reinforce Equity losses.
 
-A central finding is that **Equity remains the portfolio's largest structural source of downside**, reflecting its 50% allocation to the asset class. Equity contributes **-16.24% of NAV** during the COVID-19 Market Crash and **-14.37% of NAV** during the 2022 Inflation / Rates Sell-Off. However, the comparison between these two episodes demonstrates that Equity losses alone do not determine total portfolio stress severity. Although the Equity loss is larger during COVID-19, the total portfolio loss is substantially worse during 2022.
-
-The difference is primarily explained by the behavior of the portfolio's Rates allocation. Across the three historical scenarios, Rates contribute:
+A central finding is that **Rates diversification is strongly regime-dependent**. Treasury exposure provides meaningful protection during the COVID-19 Market Crash and positive portfolio support during the 2023 Regional Banking Stress, but becomes a major source of loss during the 2022 Inflation / Rates Sell-Off.
 
 **Table 15. Historical Rates Contribution Across Scenarios**
 
@@ -880,31 +862,19 @@ The difference is primarily explained by the behavior of the portfolio's Rates a
 | 2022 Inflation / Rates Sell-Off | -5.49% | Loss amplification |
 | 2023 Regional Banking Stress | +1.27% | Positive portfolio support |
 
-This variation demonstrates that the portfolio's fixed-income allocation is an important but **regime-dependent source of diversification**. During COVID-19 and the Regional Banking Stress, Treasury gains provide positive portfolio support. During the 2022 inflation-driven sell-off, the relationship reverses and Rates become the second-largest source of loss.
+The comparison illustrates why the 2022 episode produces the largest historical portfolio loss. Equity contributes **-14.37% of NAV** during 2022, compared with a larger **-16.24%** loss during COVID-19, yet the total portfolio loss is substantially worse in 2022. The difference reflects the broader alignment of negative contributions across Rates, Credit, and Commodity rather than greater Equity weakness alone.
 
-The 2022 episode therefore represents the most significant historical diversification breakdown in the analysis. Equity, Rates, Credit, and Commodity all contribute negatively, leaving only a small positive FX contribution. The resulting **-23.09% of NAV** portfolio loss illustrates the vulnerability created when several major asset classes become exposed to the same adverse macroeconomic regime.
-
-By contrast, the COVID-19 Market Crash demonstrates the value of cross-asset diversification when defensive exposures behave as expected. Severe Equity and Credit losses are partially offset by gains in IEF and TLT. The portfolio still experiences a substantial **-16.39% of NAV** loss, but the positive Rates contribution reduces the overall severity of the drawdown.
-
-The 2023 Regional Banking Stress provides an even stronger example of scenario-dependent portfolio behavior. Rates, Gold, LQD, and QQQ all contribute positively, producing an overall portfolio gain of **2.45% of NAV**. The result demonstrates that a period of financial stress does not necessarily translate into a portfolio loss when the portfolio's exposures are favorably positioned relative to the cross-asset movements occurring during the episode.
-
-A second important finding is that **diversification by instrument or asset-class count does not necessarily imply diversification of economic risk**. The portfolio contains ten instruments across five asset classes, but several positions can become exposed to related macroeconomic forces during a stress event. The 2022 episode illustrates this particularly clearly: Equity positions decline while duration-sensitive Treasury and Credit exposures also suffer substantial losses. The apparent diversification of the portfolio therefore becomes less effective when adverse risk channels align.
-
-The position-level results further demonstrate that stress contribution depends jointly on **return severity and exposure size**. An instrument with the largest percentage decline does not necessarily generate the largest portfolio loss. For example, during both COVID-19 and the 2022 sell-off, SPY generates the largest individual dollar loss despite other Equity positions experiencing larger percentage declines. Stress attribution therefore provides information that cannot be obtained by examining historical returns alone.
-
-Credit also behaves differently across historical environments. LQD and HYG generate substantial losses during COVID-19 and 2022, while Credit produces a positive net contribution during the Regional Banking Stress. Because the historical methodology applies realized instrument returns directly, these results capture the combined repricing of each instrument rather than isolating individual rate, spread, liquidity, or other underlying effects. This is an important distinction from the hypothetical framework, where Credit P&L can be explicitly decomposed into modeled rate and spread contributions.
-
-Taken together, the historical scenarios identify three principal characteristics of the portfolio's stress profile:
+The historical results therefore identify three principal characteristics of the portfolio's stress profile:
 
 1. **Equity concentration is the primary structural source of downside.** The portfolio's 50% Equity allocation generates the largest negative asset-class contribution in both historical loss scenarios.
 
-2. **Rates diversification is highly regime dependent.** Treasury exposure materially reduces losses during some stress episodes but substantially amplifies losses when rising yields coincide with Equity weakness.
+2. **Rates diversification is highly regime-dependent.** Treasury exposure can materially reduce portfolio losses during flight-to-quality stress but can amplify losses when rising yields coincide with Equity weakness.
 
-3. **Cross-asset loss alignment is more important than the severity of any single asset-class decline.** The largest historical portfolio loss occurs in 2022 not because Equity performs worse than during COVID-19, but because Equity, Rates, Credit, and Commodity decline simultaneously.
+3. **Cross-asset loss alignment is a key determinant of portfolio stress severity.** The most damaging historical outcome occurs when several major asset classes decline simultaneously rather than when Equity experiences its largest standalone loss.
 
-The historical analysis therefore suggests that the portfolio is most vulnerable to stress environments in which **Equity weakness coincides with adverse fixed-income performance and broader cross-asset repricing**. Conversely, the portfolio is considerably more resilient when Treasury and other defensive exposures appreciate as risk assets weaken.
+The position-level analysis also reinforces the importance of exposure size in stress attribution. The instrument experiencing the largest percentage decline does not necessarily generate the largest dollar loss, demonstrating that portfolio stress contribution depends jointly on the severity of the market movement and the size of the current exposure.
 
-These findings are consistent with several patterns identified in the hypothetical stress analysis, particularly the importance of diversification breakdown under the Stagflation Shock. The next section compares the historical and hypothetical frameworks directly to determine which portfolio vulnerabilities are persistent across both forms of stress testing and which depend on scenario-specific assumptions.
+Taken together, the historical scenarios show that the portfolio is most vulnerable when **Equity weakness coincides with adverse fixed-income performance and broader cross-asset repricing**. Conversely, the portfolio is more resilient when Treasury and other defensive exposures appreciate as risk assets weaken. These findings provide an empirical counterpart to the diversification patterns identified under the hypothetical stress framework and form the basis for the cross-framework comparison in the following section.
 
 ## 6. Cross-Framework Risk Analysis
 
@@ -940,7 +910,7 @@ The asset-class heatmap provides a complementary view by showing how the composi
 
 ![Cross-Scenario Asset-Class P&L Heatmap](../outputs/figures/asset_class_scenario_heatmap.png)
 
-The heatmap highlights the importance of cross-asset interaction. Equity is the dominant source of downside in the major loss scenarios, but the behavior of Rates changes substantially across stress regimes. During the COVID-19 Market Crash and Global Risk-Off, positive Rates contributions partially offset Equity losses. During the 2022 Inflation / Rates Sell-Off, Stagflation Shock, and Rates Higher for Longer scenario, Rates instead contribute negatively and reinforce losses elsewhere in the portfolio.
+The heatmap highlights the importance of cross-asset interaction. Equity is the dominant source of downside in the major loss scenarios, but the behavior of Rates changes substantially across stress regimes. During the COVID-19 Market Crash and Global Risk-Off, positive Rates contributions partially offset Equity losses. Under the 2022 Inflation / Rates Sell-Off, Stagflation Shock, and Rates Higher for Longer scenarios, Rates instead contribute negatively and reinforce losses elsewhere in the portfolio.
 
 The same comparison also shows why total portfolio severity cannot be inferred from Equity performance alone. Equity contributes **-16.24% of NAV** during COVID-19 compared with **-14.37%** during the 2022 sell-off, yet the total portfolio loss is substantially larger in 2022 because Rates, Credit, and Commodity also contribute negatively. Similarly, the hypothetical Stagflation Shock combines Equity, Rates, and Credit losses, making it more severe than scenarios in which adverse movements are concentrated in fewer risk channels.
 
@@ -982,17 +952,11 @@ For these reasons, the reported stress losses should be interpreted as **conditi
 
 ## 8. Conclusion
 
-This report developed a multi-asset stress-testing framework to evaluate the sensitivity of a $100 million portfolio across both hypothetical and historical market environments. By combining risk-factor-based hypothetical stress with historical replay, the analysis provides two complementary views of portfolio vulnerability: one based on explicitly defined economic shocks and another based on cross-asset market movements observed during realized periods of stress.
+This report developed a multi-asset stress-testing framework to evaluate a $100 million portfolio across both hypothetical and historical market environments. The combination of risk-factor-based hypothetical stress and historical replay provides complementary perspectives on portfolio vulnerability, allowing the analysis to examine both explicitly defined economic shocks and cross-asset relationships observed during realized periods of market stress.
 
-Across the scenarios examined, the portfolio's most significant structural vulnerability is its **50% allocation to Equity**, which generates the largest source of downside in the major loss scenarios. However, the analysis also demonstrates that Equity exposure alone does not determine overall stress severity. Portfolio losses become substantially more severe when weakness in Equity coincides with adverse performance in Rates and Credit.
+The results identify **Equity concentration as the portfolio's largest structural source of downside**, reflecting its 50% allocation to the asset class. However, the analysis also demonstrates that Equity weakness alone does not determine overall stress severity. The most damaging outcomes occur when Equity losses coincide with adverse performance in Rates, Credit, and other exposures, reducing the diversification benefits expected from a multi-asset portfolio. This pattern is particularly evident in the 2022 Inflation / Rates Sell-Off and the hypothetical Stagflation Shock.
 
-This interaction is most visible in the **2022 Inflation / Rates Sell-Off**, which produces the largest historical loss at approximately **23.09% of NAV**, and the **Stagflation Shock**, which produces the largest hypothetical loss at approximately **15.00% of NAV**. In both environments, fixed-income exposure fails to provide its conventional defensive role and instead reinforces losses elsewhere in the portfolio. By contrast, during the COVID-19 Market Crash and Global Risk-Off scenario, positive Rates performance partially offsets Equity weakness and reduces total portfolio stress.
+The two stress methodologies reinforce this conclusion from different perspectives. Historical replay captures realized cross-asset behavior without requiring those relationships to be specified in advance, while hypothetical stress allows individual risk factors and economic assumptions to be examined explicitly. Used together, the frameworks provide a more complete assessment of portfolio vulnerability than either approach alone and help distinguish structural risk concentrations from scenario-specific outcomes.
 
-The analysis therefore identifies three recurring features of the portfolio's risk profile: **material Equity concentration, regime-dependent fixed-income diversification, and vulnerability to cross-asset loss alignment**. Gold provides a partial defensive offset in several scenarios, while FX has a relatively limited effect on overall portfolio outcomes.
-
-More broadly, the results demonstrate the value of evaluating portfolio risk across multiple stress methodologies. Historical replay captures realized cross-asset relationships without requiring those relationships to be specified in advance, while hypothetical stress allows individual risk factors and economic assumptions to be examined explicitly. Neither approach is sufficient on its own, but together they provide a more complete view of how portfolio diversification may behave under changing market regimes.
-
-The central risk-management conclusion is that **portfolio diversification should be evaluated not only by the number of instruments or asset classes held, but by the underlying economic risk drivers that those exposures share**. Stress testing makes these relationships visible by identifying the conditions under which apparent diversification remains effective and the conditions under which it can break down.
-
-
+The central risk-management conclusion is that **portfolio diversification should be evaluated not only by the number of instruments or asset classes held, but by the underlying economic risk drivers that those exposures share**. Stress testing makes these relationships visible by identifying the conditions under which diversification remains effective and the conditions under which adverse cross-asset alignment can materially amplify portfolio losses.
 
