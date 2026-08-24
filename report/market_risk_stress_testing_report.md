@@ -596,5 +596,211 @@ The historical and hypothetical scenarios also provide useful points of comparis
 
 The scenario framework therefore evaluates not only the magnitude of portfolio losses, but also how the sources of those losses and the effectiveness of diversification change across different market environments.
 
+## 4. Hypothetical Stress Testing Results
+
+### 4.1 Portfolio-Level Scenario Results
+
+The four hypothetical scenarios produce materially different portfolio outcomes, reflecting differences in the direction and combination of equity, interest-rate, credit-spread, commodity, and foreign-exchange shocks. Of the four scenarios, Stagflation Shock generates the largest portfolio loss, followed by Rates Higher for Longer and Global Risk-Off. Growth / Risk-On Rally produces a positive portfolio result.
+
+**Table 6. Hypothetical Stress Scenario Results**
+
+| Scenario | Portfolio Stress P&L | P&L (% NAV) |
+|---|---:|---:|
+| Stagflation Shock | -$15,000,000 | -15.00% |
+| Rates Higher for Longer | -$12,950,500 | -12.95% |
+| Global Risk-Off | -$8,570,500 | -8.57% |
+| Growth / Risk-On Rally | $4,466,500 | 4.47% |
+
+**Figure 1. Hypothetical Scenario Stress Comparison**
+
+![Hypothetical Scenario Stress Comparison](../outputs/figures/hypothetical_scenario_comparison.png)
+
+The **Stagflation Shock** is the most severe hypothetical scenario, producing a loss of $15.0 million, or **15.00% of NAV**. The severity of this scenario reflects simultaneous adverse movements across several major portfolio exposures. Equity positions decline substantially, while rising interest rates generate losses on Treasury and credit positions and wider credit spreads create an additional source of pressure. Although gold provides a positive contribution, the offset is small relative to the combined losses from Equity, Rates, and Credit.
+
+The **Rates Higher for Longer** scenario produces the second-largest hypothetical loss at approximately $13.0 million, or **12.95% of NAV**. In this scenario, the portfolio is affected by both direct equity weakness and substantial duration-related losses. Long-duration fixed-income exposure becomes particularly important because rising yields reduce the value of Treasury and investment-grade credit positions. The scenario demonstrates that the portfolio's Rates allocation can become a material source of downside when the direction of the interest-rate shock is adverse.
+
+The **Global Risk-Off** scenario produces a smaller but still significant loss of approximately $8.6 million, or **8.57% of NAV**. Equity losses are severe in this scenario, but they are partially offset by gains in Treasury positions and gold. This result illustrates a more conventional flight-to-quality environment in which defensive exposures provide meaningful diversification against falling risk assets.
+
+The **Growth / Risk-On Rally** scenario generates a gain of approximately $4.5 million, or **4.47% of NAV**. Strong equity performance more than offsets losses from Treasury duration, credit positions, and gold. The positive result confirms that the portfolio retains meaningful upside participation through its 50% Equity allocation, while also illustrating the opportunity cost of defensive positions when growth expectations and risk appetite improve.
+
+Taken together, the scenario results show that portfolio outcomes depend not only on the severity of individual market shocks, but also on whether major asset classes reinforce or offset one another. The contrast between Stagflation Shock and Global Risk-Off is particularly important: both contain substantial equity weakness, but their portfolio losses differ because the Rates allocation behaves in opposite directions. This cross-asset interaction is examined more directly through asset-class attribution in the following subsection.
+
+### 4.2 Cross-Scenario Asset-Class Attribution
+
+Portfolio-level stress results can be decomposed by asset class to identify which exposures drive losses and which provide diversification benefits under each hypothetical scenario. Table 7 presents each asset class's contribution to portfolio P&L as a percentage of NAV.
+
+**Table 7. Hypothetical Asset-Class Attribution (% NAV)**
+
+| Asset Class | Global Risk-Off | Stagflation Shock | Rates Higher for Longer | Growth / Risk-On Rally |
+|---|---:|---:|---:|---:|
+| Equity | -11.23% | -10.27% | -5.84% | 8.12% |
+| Rates | 2.51% | -3.11% | -4.80% | -2.85% |
+| Credit | -0.23% | -2.14% | -1.99% | -0.63% |
+| Commodity | 0.50% | 0.60% | -0.30% | -0.25% |
+| FX | -0.12% | -0.07% | -0.02% | 0.07% |
+| **Portfolio** | **-8.57%** | **-15.00%** | **-12.95%** | **4.47%** |
+
+The attribution results show that **Equity is the dominant source of directional portfolio risk across the hypothetical scenarios**. Equity contributes a loss of 11.23% of NAV under Global Risk-Off and 10.27% under Stagflation Shock. Even under Rates Higher for Longer, where fixed-income losses become particularly important, Equity remains the largest individual asset-class loss at 5.84% of NAV. Conversely, the Growth / Risk-On Rally produces an 8.12% positive Equity contribution, demonstrating that the same concentration that creates substantial downside exposure also provides the portfolio's primary source of upside participation.
+
+The behavior of the **Rates allocation is strongly regime-dependent**. Under Global Risk-Off, Rates contribute a positive 2.51% of NAV and materially offset the Equity drawdown. This reflects the assumed decline in Treasury yields during a flight-to-quality environment. Under Stagflation Shock and Rates Higher for Longer, however, Rates contribute losses of 3.11% and 4.80% of NAV, respectively. In these environments, rising yields cause the portfolio's duration exposure to reinforce rather than offset losses elsewhere.
+
+This difference can be summarized as:
+
+$$
+\mathrm{Global\ Risk\text{-}Off:}
+\qquad
+\mathrm{Equity}\downarrow
++
+\mathrm{Rates}\uparrow
+$$
+
+compared with:
+
+$$
+\mathrm{Stagflation/Rates\ Stress:}
+\qquad
+\mathrm{Equity}\downarrow
++
+\mathrm{Rates}\downarrow
+$$
+
+The contrast demonstrates that the diversification benefit of Treasury exposure is conditional on the underlying economic regime. Rates provide meaningful protection when market stress is accompanied by falling yields, but they become an additional source of loss when inflation or monetary tightening pushes yields higher.
+
+**Credit** contributes negatively in all four hypothetical scenarios, although the magnitude varies substantially. The largest Credit losses occur under Stagflation Shock (-2.14% of NAV) and Rates Higher for Longer (-1.99%), where interest-rate pressure combines with adverse credit-spread movements. Under Global Risk-Off, the Credit loss is much smaller at 0.23% of NAV because gains from declining underlying Treasury yields partially offset the effect of wider credit spreads. The Growth / Risk-On Rally also produces a modest Credit loss of 0.63% of NAV because the benefit from spread tightening is insufficient to offset the negative impact of higher underlying rates within the specified scenario.
+
+**Commodity exposure**, represented by gold, provides a positive contribution under both Global Risk-Off and Stagflation Shock, adding 0.50% and 0.60% of NAV, respectively. These gains provide diversification but remain small relative to the portfolio's Equity, Rates, and Credit exposures because Commodity represents only 5% of NAV. Gold therefore acts as a partial offset rather than a sufficient hedge against broad portfolio losses. Under Rates Higher for Longer and Growth / Risk-On Rally, Commodity contributes modest losses.
+
+**FX exposure** has the smallest direct portfolio impact across the four scenarios, with contributions ranging from -0.12% to 0.07% of NAV. This reflects both the relatively small 5% direct FX allocation and the specified scenario shocks. FX nevertheless contributes to the overall decomposition and also affects VGK through its additional 0.35 sensitivity to EURUSD.
+
+Overall, the asset-class attribution demonstrates that the severity of a hypothetical stress scenario is determined by the **interaction of major portfolio exposures**, rather than by Equity losses alone. Global Risk-Off contains the largest Equity loss of the four scenarios, yet it does not generate the largest portfolio loss because Rates and Commodity provide positive offsets. Stagflation Shock is more damaging because losses occur simultaneously across Equity, Rates, and Credit, substantially weakening the portfolio's diversification structure.
+
+This simultaneous deterioration across major asset classes explains why Stagflation Shock is the most severe hypothetical scenario and motivates a more detailed decomposition of its $15.0 million portfolio loss in the following subsections.
+
+### 4.3 Stagflation Shock: Asset-Class Decomposition
+
+Stagflation Shock produces the most severe result among the four hypothetical scenarios, generating a portfolio loss of **$15.0 million, or 15.00% of NAV**. Unlike a conventional risk-off scenario in which falling interest rates may offset weakness in risky assets, the Stagflation Shock generates simultaneous losses across the portfolio's three largest asset classes: Equity, Rates, and Credit.
+
+**Figure 2. Stagflation Shock — Asset-Class P&L Attribution**
+
+![Stagflation Shock Asset-Class Attribution](../outputs/figures/stagflation_asset_class_attribution.png)
+
+The portfolio loss can be decomposed as:
+
+$$
+-15.00\%
+=
+-10.27\%_{\mathrm{Equity}}
+-3.11\%_{\mathrm{Rates}}
+-2.14\%_{\mathrm{Credit}}
+-0.07\%_{\mathrm{FX}}
++0.60\%_{\mathrm{Commodity}}
+$$
+
+Equity is the dominant source of loss, contributing approximately **-$10.28 million, or -10.27% of NAV**. This represents more than two-thirds of the gross negative contribution before diversification offsets and reflects losses across SPY, QQQ, and VGK. Given that Equity represents 50% of portfolio NAV, the result confirms that the portfolio's largest allocation is also its primary source of downside under the scenario.
+
+Rates generate the second-largest asset-class loss at approximately **-$3.11 million, or -3.11% of NAV**. Both IEF and TLT are negatively affected by the assumed increase in Treasury yields. The contribution is particularly important from a portfolio-risk perspective because the Rates allocation does not provide the defensive offset that it provides under Global Risk-Off. Instead, duration exposure reinforces the Equity drawdown.
+
+Credit contributes an additional **-$2.14 million, or -2.14% of NAV**. The loss reflects the combined effect of higher underlying Treasury yields and wider corporate credit spreads on LQD and HYG. The presence of both risk channels makes Credit another source of reinforcing downside rather than a source of diversification.
+
+FX contributes a comparatively small loss of approximately **-$70,000, or -0.07% of NAV**. Its portfolio-level effect is limited relative to the three major loss-producing asset classes.
+
+Commodity is the only asset class to provide a meaningful positive contribution. The GLD position generates a gain of **$600,000, or 0.60% of NAV**, partially offsetting losses elsewhere in the portfolio. However, because Commodity represents only 5% of NAV, the positive contribution is insufficient to materially change the overall stress outcome.
+
+The Stagflation result therefore illustrates a form of **cross-asset loss concentration**. The severity of the scenario does not arise from a single exceptionally large position loss alone; rather, it results from the alignment of negative contributions across several major portfolio exposures:
+
+$$
+\mathrm{Equity}\downarrow
++
+\mathrm{Rates}\downarrow
++
+\mathrm{Credit}\downarrow
+>
+\mathrm{Commodity\ Hedge}
+$$
+
+This structure is particularly damaging because the portfolio's principal defensive fixed-income allocation becomes positively aligned with the direction of Equity losses. Gold continues to provide diversification, but its smaller portfolio weight limits the magnitude of the offset.
+
+Asset-class attribution identifies where the portfolio loss is concentrated, but it does not fully explain which modeled market shocks generate those losses. The next subsection therefore decomposes the same Stagflation result at the underlying risk-factor level.
+
+### 4.4 Stagflation Shock: Risk-Factor Decomposition
+
+Asset-class attribution identifies the broad portfolio exposures responsible for the Stagflation loss, while risk-factor attribution provides a more granular explanation of the underlying modeled shocks. Because hypothetical stress P&L is calculated initially at the risk-factor level, each position's loss can be decomposed into the individual factors that generate it.
+
+**Figure 3. Stagflation Shock — Risk-Factor P&L Attribution**
+
+![Stagflation Shock Risk-Factor Attribution](../outputs/figures/stagflation_risk_factor_attribution.png)
+
+The largest individual risk-factor loss is generated by `SPX`, which contributes **-$4.50 million, or -4.50% of NAV**. `NASDAQ` is the second-largest contributor at **-$3.60 million, or -3.60% of NAV**, followed by `EU_EQUITY` at **-$2.00 million, or -2.00% of NAV**. Together, these three equity factors account for the majority of the scenario's negative P&L and explain the dominant Equity contribution identified in Section 4.3.
+
+Interest-rate factors represent the next major source of loss. `USD_20Y_RATE` contributes **-$1.58 million (-1.58% of NAV)** through the TLT position, while `USD_7Y_RATE` contributes **-$1.53 million (-1.53%)** through IEF. The particularly large contribution from the 20-year factor reflects TLT's high modified duration, which amplifies the effect of a given yield shock on the position's value.
+
+The credit positions introduce both rate and spread risk. `USD_10Y_RATE` contributes approximately **-$1.01 million (-1.01% of NAV)** through LQD, while `IG_SPREAD` contributes an additional **-$570,000 (-0.57%)**. HYG is similarly affected by both `USD_5Y_RATE`, which contributes approximately **-$263,000 (-0.26%)**, and `HY_SPREAD`, which contributes approximately **-$297,000 (-0.30%)**. The decomposition demonstrates that the portfolio's Credit loss is not attributable solely to widening credit spreads; higher underlying Treasury yields also make a material contribution.
+
+Foreign-exchange effects are comparatively small. `EURUSD` contributes approximately **-$325,000 (-0.33% of NAV)** across the positions mapped to that factor, while `USDJPY` contributes a positive **$80,000 (0.08%)**. The EURUSD contribution includes both the direct EURUSD position and VGK's additional 0.35 sensitivity to the currency factor.
+
+Gold is the largest positive risk-factor contributor. The `GOLD` shock generates a gain of **$600,000, or 0.60% of NAV**, providing a partial hedge against losses generated elsewhere in the portfolio. As at the asset-class level, however, the magnitude of this positive contribution is insufficient to offset the simultaneous losses generated by Equity, Rates, and Credit factors.
+
+The risk-factor decomposition can be summarized conceptually as:
+
+$$
+\mathrm{Equity\ Factor\ Losses}
++
+\mathrm{Rate\ Factor\ Losses}
++
+\mathrm{Spread\ Losses}
++
+\mathrm{FX\ Effects}
++
+\mathrm{Gold\ Offset}
+=
+\mathrm{Portfolio\ Stress\ P\&L}
+$$
+
+A useful feature of the decomposition is that it distinguishes **portfolio allocation from underlying risk concentration**. The portfolio contains ten individual instruments across five asset classes, but a substantial portion of the Stagflation loss is concentrated in a relatively small number of risk factors. In particular, `SPX`, `NASDAQ`, and `EU_EQUITY` collectively contribute approximately:
+
+$$
+-\$4.50\,\mathrm{m}
+-\$3.60\,\mathrm{m}
+-\$2.00\,\mathrm{m}
+=
+-\$10.10\,\mathrm{m}
+$$
+
+This concentration reflects the portfolio's 50% Equity allocation and demonstrates that diversification by instrument count does not necessarily imply diversification by underlying economic risk.
+
+At the same time, the decomposition reveals a second source of vulnerability: the scenario generates losses across multiple points of the Treasury curve as well as through credit spreads. The Stagflation loss is therefore not simply an Equity drawdown. It represents the simultaneous realization of several adverse risk channels that would ordinarily be expected to provide at least some diversification from one another.
+
+The Stagflation scenario consequently highlights two related dimensions of portfolio vulnerability: **concentration in Equity risk factors and adverse cross-asset interaction between Equity, Rates, and Credit risk**. Gold provides a visible hedge, but its contribution is too small to counterbalance these larger exposures.
+
+### 4.5 Hypothetical Stress Findings
+
+The hypothetical stress analysis highlights several important characteristics of the portfolio's risk profile.
+
+First, **Equity is the portfolio's dominant source of directional risk**. With 50% of NAV allocated to Equity, adverse shocks to `SPX`, `NASDAQ`, and `EU_EQUITY` generate the largest individual risk-factor losses across the downside scenarios. This concentration is particularly visible under Stagflation Shock, where Equity contributes -10.27% of NAV to the total -15.00% portfolio result.
+
+Second, **the diversification benefit of the Rates allocation is strongly scenario-dependent**. Under Global Risk-Off, falling Treasury yields generate a positive Rates contribution of 2.51% of NAV, materially reducing the effect of the Equity drawdown. Under Stagflation Shock and Rates Higher for Longer, however, rising yields cause Rates to lose 3.11% and 4.80% of NAV, respectively. Fixed-income exposure therefore functions as an effective hedge in some stress environments but becomes an additional source of loss in inflationary and rising-rate regimes.
+
+Third, **Credit introduces multiple channels of stress transmission**. LQD and HYG are exposed to both movements in underlying Treasury rates and changes in corporate credit spreads. As a result, Credit losses can arise even when spread movements alone appear moderate. This is especially relevant under Stagflation Shock and Rates Higher for Longer, where adverse rate and spread effects reinforce one another.
+
+Fourth, **gold provides diversification, but the hedge is limited by portfolio weight**. Commodity exposure contributes positively under both Global Risk-Off and Stagflation Shock, including a 0.60% of NAV gain under Stagflation. However, the 5% Commodity allocation is too small to offset simultaneous losses across the substantially larger Equity, Rates, and Credit allocations.
+
+Finally, the scenario comparison demonstrates that **portfolio stress severity depends on cross-asset interaction rather than on the largest individual asset-class loss alone**. Global Risk-Off produces a larger Equity loss than Stagflation Shock (-11.23% versus -10.27% of NAV), yet its total portfolio loss is considerably smaller (-8.57% versus -15.00%). The difference is primarily explained by the behavior of Rates: they provide a positive offset under Global Risk-Off but reinforce losses under Stagflation.
+
+The central hypothetical stress finding is therefore that the portfolio is most vulnerable when its major sources of risk become adversely aligned:
+
+$$
+\mathrm{Equity\ Weakness}
++
+\mathrm{Rising\ Rates}
++
+\mathrm{Credit\ Deterioration}
+\rightarrow
+\mathrm{Diversification\ Breakdown}
+$$
+
+Stagflation Shock represents the clearest example of this vulnerability within the hypothetical scenario set. Conversely, Global Risk-Off demonstrates that the portfolio can absorb a substantial Equity drawdown more effectively when Treasury duration and gold behave defensively.
+
+These results suggest that the portfolio's resilience cannot be assessed from asset allocation alone. The effectiveness of diversification depends on the relationships among risk factors under the specific stress environment. The historical stress analysis in the following section provides an empirical comparison by examining whether similar patterns of diversification and cross-asset loss concentration occurred during realized periods of market stress.
+
 
 
