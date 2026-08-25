@@ -8,6 +8,8 @@ For the complete methodology, scenario analysis, attribution results, cross-fram
 
 [Read the full Market Risk Stress Testing Report](report/market_risk_stress_testing_report.md)
 
+[Download the polished PDF report](report/market_risk_stress_testing_report.pdf)
+
 ## Project Overview
 
 This project develops an end-to-end market risk stress-testing framework for a hypothetical **$100 million multi-asset portfolio** spanning Equity, Rates, Credit, Commodity, and FX exposures.
